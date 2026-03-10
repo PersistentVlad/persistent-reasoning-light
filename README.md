@@ -87,10 +87,73 @@ Five cards already capture:
 
 ```
 persistent-reasoning-light/
-
-reasoning-engine/
-reasoning-brain/
-reasoning-adapters/
+├── reasoning-engine/
+│   ├── README.md
+│   ├── pyproject.toml
+│   ├── .gitignore
+│   │
+│   ├── core/
+│   │   ├── init.py
+│   │   ├── artifact_types.py
+│   │   ├── artifact_filter.py
+│   │   ├── artifact_cards.py
+│   │   ├── storage.py
+│   │   ├── validation.py
+│   │   ├── relations.py
+│   │   ├── view_builder.py
+│   │   ├── git_adapter.py
+│   │   ├── context_loader.py
+│   │   └── cli.py
+│   │
+│   ├── meta/
+│   │   ├── ai/
+│   │   │   ├── AIContext.md
+│   │   │   ├── architecture_context.md
+│   │   │   ├── codex_rules.md
+│   │   │   └── codex_tasks.md
+│   │   │
+│   │   └── docs/
+│   │       ├── architecture.md
+│   │       ├── reasoning_model.md
+│   │       ├── repository_layout.md
+│   │       ├── agent_adoption_model
+│   │       └── adapter_contract.md
+│   │
+│   └── dev/
+│       └── tests/
+│           ├── test_cards.py
+│           ├── test_storage.py
+│           ├── test_relations.py
+│           ├── test_view_builder.py
+│           └── test_git_adapter.py
+│
+├── reasoning-brain/
+│   ├── README.md
+│   │
+│   ├── brain/
+│   │   ├── tasks/
+│   │   ├── decisions/
+│   │   ├── constraints/
+│   │   ├── procedures/
+│   │   └── issues/
+│   │
+│   ├── relations/
+│   │   ├── depends_on.jsonl
+│   │   └── blocks.jsonl
+│   │
+│   ├── views/
+│   │   └── working_context.json
+│   │
+│   └── runtime/
+│       ├── drafts/
+│       └── inbox/
+│
+└── reasoning-adapters/
+    ├── README.md
+    ├── openclaw/
+    ├── zeroclaw/
+    ├── codex/
+    └── claude/
 ```
 
 - **reasoning-engine** — core runtime
