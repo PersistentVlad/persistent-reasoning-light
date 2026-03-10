@@ -93,7 +93,7 @@ persistent-reasoning-light/
 │   ├── .gitignore
 │   │
 │   ├── core/
-│   │   ├── init.py
+│   │   ├── __init__.py
 │   │   ├── artifact_types.py
 │   │   ├── artifact_filter.py
 │   │   ├── artifact_cards.py
