@@ -116,7 +116,7 @@ persistent-reasoning-light/
 │   │       ├── architecture.md
 │   │       ├── reasoning_model.md
 │   │       ├── repository_layout.md
-│   │       ├── agent_adoption_model
+│   │       ├── agent_adoption_model.md
 │   │       └── adapter_contract.md
 │   │
 │   └── dev/
