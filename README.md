@@ -119,13 +119,12 @@ persistent-reasoning-light/
 │   │       ├── agent_adoption_model.md
 │   │       └── adapter_contract.md
 │   │
-│   └── dev/
-│       └── tests/
-│           ├── test_cards.py
-│           ├── test_storage.py
-│           ├── test_relations.py
-│           ├── test_view_builder.py
-│           └── test_git_adapter.py
+│   └── tests/
+│       ├── test_cards.py
+│       ├── test_storage.py
+│       ├── test_relations.py
+│       ├── test_view_builder.py
+│       └── test_git_adapter.py
 │
 ├── reasoning-brain/
 │   ├── README.md
@@ -150,10 +149,11 @@ persistent-reasoning-light/
 │
 └── reasoning-adapters/
     ├── README.md
-    ├── openclaw/
-    ├── zeroclaw/
-    ├── codex/
-    └── claude/
+    ├── openclaw_adapter/
+    ├── zeroclaw_adapter/
+    ├── codex_adapter/
+    ├── claude_code_adapter/
+    └── generic_agent_adapter/
 ```
 
 - **reasoning-engine** — core runtime

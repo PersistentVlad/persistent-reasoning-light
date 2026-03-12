@@ -161,8 +161,9 @@ Example structure:
 reasoning-adapters/
 
 codex_adapter/
-claude_adapter/
+claude_code_adapter/
 openclaw_adapter/
+zeroclaw_adapter/
 generic_agent_adapter/
 ```
 

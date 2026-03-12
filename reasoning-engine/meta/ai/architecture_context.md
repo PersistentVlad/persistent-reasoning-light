@@ -50,14 +50,14 @@ The reasoning engine is composed of a small set of modules.
 Core modules include:
 
 ```
-artifact_cards.py
-artifact_filter.py
-storage.py
-relations.py
-validation.py
-view_builder.py
-git_adapter.py
-context_loader.py
+reasoning-engine/core/artifact_cards.py
+reasoning-engine/core/artifact_filter.py
+reasoning-engine/core/storage.py
+reasoning-engine/core/relations.py
+reasoning-engine/core/validation.py
+reasoning-engine/core/view_builder.py
+reasoning-engine/core/git_adapter.py
+reasoning-engine/core/context_loader.py
 ```
 
 Each module should remain small and focused.
@@ -69,7 +69,7 @@ Each module should remain small and focused.
 File:
 
 ```
-core/artifact_cards.py
+reasoning-engine/core/artifact_cards.py
 ```
 
 Purpose:
@@ -101,7 +101,7 @@ The module should include:
 File:
 
 ```
-core/artifact_filter.py
+reasoning-engine/core/artifact_filter.py
 ```
 
 Purpose:
@@ -134,6 +134,7 @@ The filter only returns a verdict:
 ACCEPT
 REJECT
 REWRITE
+POSSIBLE_DUPLICATE
 ```
 
 Heuristics must remain simple.
@@ -145,7 +146,7 @@ Heuristics must remain simple.
 File:
 
 ```
-core/storage.py
+reasoning-engine/core/storage.py
 ```
 
 Purpose:
@@ -183,7 +184,7 @@ No database should be introduced.
 File:
 
 ```
-core/relations.py
+reasoning-engine/core/relations.py
 ```
 
 Purpose:
@@ -217,7 +218,7 @@ This structure enables graph-like reasoning while keeping artifacts small.
 File:
 
 ```
-core/validation.py
+reasoning-engine/core/validation.py
 ```
 
 Purpose:
@@ -241,7 +242,7 @@ The system must avoid complex semantic reasoning.
 File:
 
 ```
-core/view_builder.py
+reasoning-engine/core/view_builder.py
 ```
 
 Purpose:
@@ -251,7 +252,7 @@ Constructs derived views of the reasoning brain.
 The most important view is:
 
 ```
-views/working_context.json
+reasoning-brain/views/working_context.json
 ```
 
 The working context contains only the information required by the agent.
@@ -274,7 +275,7 @@ This keeps reasoning retrieval efficient.
 File:
 
 ```
-core/git_adapter.py
+reasoning-engine/core/git_adapter.py
 ```
 
 Purpose:
@@ -300,7 +301,7 @@ Only basic operations should be supported.
 File:
 
 ```
-core/context_loader.py
+reasoning-engine/core/context_loader.py
 ```
 
 Purpose:
