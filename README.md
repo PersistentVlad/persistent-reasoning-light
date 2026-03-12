@@ -1,6 +1,10 @@
 # Persistent Reasoning Light
 
-A minimal structured reasoning layer for AI agents.
+A minimal Git-native structured reasoning layer for AI agents and coding systems.
+
+Persistent Reasoning Light explores how AI systems can maintain stable reasoning continuity across long tasks using small structured reasoning artifacts instead of transient conversational memory.
+
+Built for AI agents, autonomous coding systems, and long-horizon AI workflows.
 
 Most agents fail long tasks for one simple reason:
 
@@ -9,6 +13,28 @@ Most agents fail long tasks for one simple reason:
 Persistent Reasoning Light gives agents a small structured brain that preserves decisions, constraints, procedures, and open questions across execution cycles.
 
 Instead of rebuilding context every step, agents reuse durable reasoning artifacts stored in Git.
+
+---
+
+## Architecture
+
+```
+AI Agent
+   ↓
+Artifact Suggestion
+   ↓
+runtime/inbox
+   ↓
+artifact_filter
+   ↓
+runtime/drafts
+   ↓
+Git Commit
+   ↓
+Persistent Reasoning Brain
+   ↓
+working_context.json
+```
 
 ---
 

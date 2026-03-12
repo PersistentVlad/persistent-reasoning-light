@@ -301,6 +301,30 @@ It provides:
 
 ---
 
+# Pipeline for minimal PR engine
+
+```
+agent
+↓
+suggest artifact
+↓
+runtime/inbox
+↓
+artifact_filter
+↓
+runtime/drafts
+↓
+commit
+↓
+brain
+↓
+relations
+↓
+views
+```
+
+---
+
 # Summary
 
 The reasoning brain is a lightweight structured memory system that helps agents maintain reasoning continuity across long tasks.
