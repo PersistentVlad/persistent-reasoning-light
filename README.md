@@ -203,6 +203,16 @@ Git history becomes a **timeline of reasoning evolution**.
 
 ---
 
+## For AI Coding Agents
+
+If you are an AI agent working on this repository, start here:
+
+```
+reasoning-engine/meta/ai/AGENT_START_HERE.md
+```
+
+---
+
 ## Agent-First Adoption
 
 PR-Light is designed for **agents to adopt first**.

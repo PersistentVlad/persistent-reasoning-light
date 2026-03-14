@@ -45,6 +45,18 @@ reasoning-engine/tests/
 
 ---
 
+## Golden Target Reference
+
+AI agents must follow the execution style defined in:
+
+```
+reasoning-engine/meta/ai/golden_target.md
+```
+
+This document provides examples of acceptable code patterns and runtime behavior.
+
+---
+
 ## Dependency Rule
 
 Allowed dependencies:
