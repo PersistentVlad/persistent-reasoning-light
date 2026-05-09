@@ -1,0 +1,41 @@
+{
+  "contract_version": "1.4",
+  "identity": {
+    "scenario_id": "sc_17_context_compression"
+  },
+  "migration_lock": {
+    "execution_contract": false,
+    "interpretation_support": false,
+    "interpretation_contract": false,
+    "retention_contract": true,
+    "correctness_contract": true,
+    "ghost_contract": true
+  },
+  "execution_contract": {
+    "scenario_mode": "standard",
+    "showcase": false,
+    "status": "stable",
+    "return_to_origin": false
+  },
+  "interpretation_support": {
+    "supports_retention": false,
+    "supports_correctness": false,
+    "supports_ghost": false,
+    "supports_temporal_ghost": false,
+    "trajectory_readiness": "unsupported"
+  },
+  "interpretation_contract": {
+    "interpretation_variant": "none",
+    "layer_support": {
+      "retention": "unsupported",
+      "correctness": "unsupported",
+      "ghost": "unsupported"
+    }
+  },
+  "retention_contract": null,
+  "correctness_contract": null,
+  "ghost_contract": null,
+  "trajectory_contract": null,
+  "expected_ready": false,
+  "expected_file": null
+}

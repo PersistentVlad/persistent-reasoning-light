@@ -1,0 +1,8 @@
+{
+  "metric_name": "controlled_mutations_ratio",
+  "metric_type": "emission_quality",
+  "metric_description": "Fraction of surfaced artifact mutation attempts that are controlled rather than conflicting.",
+  "metric_formula": "controlled_mutations / total_mutations",
+  "metric_direction": "higher_is_better",
+  "metric_range": "0_to_1"
+}

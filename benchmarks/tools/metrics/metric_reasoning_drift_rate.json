@@ -1,0 +1,8 @@
+{
+  "metric_name": "reasoning_drift_rate",
+  "metric_type": "reasoning_integrity",
+  "metric_description": "Frequency of reasoning deviating from the intended task or plan.",
+  "metric_formula": "drift_events / reasoning_steps",
+  "metric_direction": "lower_is_better",
+  "metric_range": "0_to_1"
+}

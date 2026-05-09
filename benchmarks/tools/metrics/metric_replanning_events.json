@@ -1,0 +1,8 @@
+{
+  "metric_name": "replanning_events",
+  "metric_type": "reasoning_stability",
+  "metric_description": "Number of times the agent replans during task execution.",
+  "metric_formula": "count(replan_events)",
+  "metric_direction": "lower_is_better",
+  "metric_range": "count"
+}

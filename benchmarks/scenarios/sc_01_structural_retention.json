@@ -1,0 +1,93 @@
+{
+    "scenario_id": "sc_01_structural_retention",
+    "scenario_name": "Structural Retention",
+    "scenario_type": "structural_retention",
+    "description": "Tests strict count-based retention of a fixed literal unit inventory across 10 forward restructuring steps and 10 reverse reconstruction steps using exact output headings and exact unit ids only.",
+    "retention_spec": {},
+    "steps": [
+        {
+            "step_id": "step_00_initial_and_rules",
+            "instruction": "Memorize this exact fixed unit inventory. Facts: F1, F2, F3, F4, F5, F6, F7, F8, F9, F10. Dependencies: D1, D2, D3, D4, D5, D6. Constraints: C1, C2, C3, C4."
+        },
+        {
+            "step_id": "step_01_action",
+            "instruction": "Compress the inventory into a shorter grouped structure while preserving every exact unit id with no renaming, no paraphrase, and no substitution."
+        },
+        {
+            "step_id": "step_02_action",
+            "instruction": "Regroup the same units into three mixed buckets of your choice while preserving every exact unit id."
+        },
+        {
+            "step_id": "step_03_action",
+            "instruction": "Reorder all units into reverse alphabetical order by unit id while preserving every exact unit id."
+        },
+        {
+            "step_id": "step_04_action",
+            "instruction": "Split the units into two halves of equal size as closely as possible, preserving every exact unit id."
+        },
+        {
+            "step_id": "step_05_action",
+            "instruction": "Rewrite the inventory as a nested two-level structure with labels of your choice, preserving every exact unit id."
+        },
+        {
+            "step_id": "step_06_action",
+            "instruction": "Flatten the structure into one plain ordered list while preserving every exact unit id."
+        },
+        {
+            "step_id": "step_07_action",
+            "instruction": "Regroup the units into priority tiers high, medium, and low of your choice while preserving every exact unit id."
+        },
+        {
+            "step_id": "step_08_action",
+            "instruction": "Rotate the ordering by moving the first five units to the end while preserving every exact unit id."
+        },
+        {
+            "step_id": "step_09_action",
+            "instruction": "Merge the units into four mixed groups of your choice while preserving every exact unit id."
+        },
+        {
+            "step_id": "step_10_action",
+            "instruction": "Produce the tenth forward restructuring as a compact plain-text inventory, preserving every exact unit id."
+        },
+        {
+            "step_id": "step_11_action",
+            "instruction": "Begin reversing the restructuring process. Rebuild toward the earlier structure without introducing or dropping any unit ids."
+        },
+        {
+            "step_id": "step_12_action",
+            "instruction": "Continue reversing toward the earlier organization. Preserve every exact unit id."
+        },
+        {
+            "step_id": "step_13_action",
+            "instruction": "Continue reversing toward the original inventory shape. Preserve every exact unit id."
+        },
+        {
+            "step_id": "step_14_action",
+            "instruction": "Continue reversing toward the original inventory shape. Preserve every exact unit id."
+        },
+        {
+            "step_id": "step_15_action",
+            "instruction": "Continue reversing toward the original inventory shape. Preserve every exact unit id."
+        },
+        {
+            "step_id": "step_16_action",
+            "instruction": "Continue reversing toward the original inventory shape. Preserve every exact unit id."
+        },
+        {
+            "step_id": "step_17_action",
+            "instruction": "Continue reversing toward the original inventory shape. Preserve every exact unit id."
+        },
+        {
+            "step_id": "step_18_action",
+            "instruction": "Continue reversing toward the original inventory shape. Preserve every exact unit id."
+        },
+        {
+            "step_id": "step_19_action",
+            "instruction": "Continue reversing toward the original inventory shape. Preserve every exact unit id."
+        },
+        {
+            "step_id": "step_99_final_report",
+            "instruction": "Return your final answer using exactly these plain-text section headings and no heading variations: CHECKPOINT 0 - INITIAL, CHECKPOINT 5 - FORWARD, CHECKPOINT 10 - FORWARD, CHECKPOINT 15 - REVERSE, CHECKPOINT 20 - FINAL, FINAL RETAINED UNITS, FINAL LOST UNITS. Under each checkpoint heading, list units using plain text lines only. In FINAL LOST UNITS, explicitly list lost unit ids or write NONE. Do not invent any unit ids beyond F1-F10, D1-D6, C1-C4."
+        }
+    ]
+}

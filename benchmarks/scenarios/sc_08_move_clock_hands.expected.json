@@ -1,0 +1,12 @@
+{
+  "scenario_id": "sc_08_move_clock_hands",
+  "final": {
+    "expected_slot_values": {
+      "TIME": "12:00",
+      "HOUR_HAND": "12",
+      "MINUTE_HAND": "00",
+      "MINUTES_TO_POS_A": "0"
+    }
+  },
+  "checkpoints": []
+}

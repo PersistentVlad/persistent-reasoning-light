@@ -1,0 +1,8 @@
+{
+  "metric_name": "knowledge_retention_rate",
+  "metric_type": "knowledge_persistence",
+  "metric_description": "How much knowledge persists and is reused across reasoning steps.",
+  "metric_formula": "retained_knowledge / total_knowledge",
+  "metric_direction": "higher_is_better",
+  "metric_range": "0_to_1"
+}

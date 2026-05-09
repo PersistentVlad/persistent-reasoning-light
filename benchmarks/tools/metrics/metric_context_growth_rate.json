@@ -1,0 +1,8 @@
+{
+  "metric_name": "context_growth_rate",
+  "metric_type": "memory_efficiency",
+  "metric_description": "Rate of context size growth during reasoning steps.",
+  "metric_formula": "context_tokens_delta / reasoning_steps",
+  "metric_direction": "lower_is_better",
+  "metric_range": "ratio"
+}

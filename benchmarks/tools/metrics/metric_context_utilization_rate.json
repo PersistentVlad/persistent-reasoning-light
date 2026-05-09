@@ -1,0 +1,8 @@
+{
+  "metric_name": "context_utilization_rate",
+  "metric_type": "knowledge_persistence",
+  "metric_description": "Whether persisted working context was actually available for reuse during execution.",
+  "metric_formula": "1 if working_context_loaded.reference_count > 0 else 0",
+  "metric_direction": "higher_is_better",
+  "metric_range": "0_to_1"
+}

@@ -1,0 +1,8 @@
+{
+  "metric_name": "token_reduction_ratio",
+  "metric_type": "memory_efficiency",
+  "metric_description": "Reduction of tokens compared to baseline or raw context.",
+  "metric_formula": "1 - (curated_tokens / raw_tokens)",
+  "metric_direction": "higher_is_better",
+  "metric_range": "0_to_1"
+}

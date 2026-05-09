@@ -1,0 +1,86 @@
+{
+  "contract_version": "1.4",
+  "identity": {
+    "scenario_id": "sc_15_math_reasoning"
+  },
+  "migration_lock": {
+    "execution_contract": false,
+    "interpretation_support": false,
+    "interpretation_contract": false,
+    "retention_contract": true,
+    "correctness_contract": true,
+    "ghost_contract": true
+  },
+  "execution_contract": {
+    "scenario_mode": "standard",
+    "showcase": false,
+    "status": "stable",
+    "return_to_origin": false
+  },
+  "interpretation_support": {
+    "supports_retention": true,
+    "supports_correctness": true,
+    "supports_ghost": false,
+    "supports_temporal_ghost": false,
+    "trajectory_readiness": "deferred"
+  },
+  "interpretation_contract": {
+    "interpretation_variant": "math_retention_with_correctness",
+    "layer_support": {
+      "retention": "enabled",
+      "correctness": "enabled",
+      "ghost": "unsupported"
+    }
+  },
+  "retention_contract": {
+    "retention_type": "math_retention_with_correctness",
+    "unit_groups": [
+      {
+        "group_id": "math_chain",
+        "label": "Math Chain",
+        "unit_ids": [
+          "SUM_18_27",
+          "LEFT_PRODUCT",
+          "RIGHT_PRODUCT",
+          "INITIAL_DIFFERENCE",
+          "AFTER_DIVISION",
+          "AFTER_ADDITION",
+          "FINAL_RESULT"
+        ]
+      }
+    ],
+    "checkpoints": [
+      {
+        "checkpoint_id": "checkpoint_01",
+        "checkpoint_label": "Verified Chain",
+        "section_heading": "CHECKPOINT 1 - VERIFIED CHAIN"
+      }
+    ],
+    "final_sections": {
+      "retained": "FINAL RETAINED UNITS",
+      "lost": "FINAL LOST UNITS"
+    },
+    "required_exact_section_headings": [
+      "CHECKPOINT 1 - VERIFIED CHAIN",
+      "FINAL RETAINED UNITS",
+      "FINAL LOST UNITS"
+    ]
+  },
+  "correctness_contract": {
+    "slot_section_heading": "CHECKPOINT 1 - VERIFIED CHAIN",
+    "value_match_policy": "exact_string",
+    "expected_slot_values": {
+      "SUM_18_27": "45",
+      "LEFT_PRODUCT": "270",
+      "RIGHT_PRODUCT": "126",
+      "INITIAL_DIFFERENCE": "144",
+      "AFTER_DIVISION": "48",
+      "AFTER_ADDITION": "73",
+      "FINAL_RESULT": "275"
+    }
+  },
+  "ghost_contract": null,
+  "trajectory_contract": null,
+  "expected_ready": false,
+  "expected_file": null
+}

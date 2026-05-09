@@ -1,0 +1,93 @@
+{
+    "scenario_id": "sc_03_math_state_loss",
+    "scenario_name": "Math State Loss and Recovery",
+    "scenario_type": "state_loss_recovery",
+    "description": "Tests whether an agent can preserve and recover an exact multi-step mathematical state across 10 forward operations and reverse reconstruction pressure using exact named slots and exact canonical values.",
+    "retention_spec": {},
+    "steps": [
+        {
+            "step_id": "step_00_initial_and_rules",
+            "instruction": "Start the exact canonical chain. Compute PRODUCT_1 = 23 * 47 and PRODUCT_2 = 58 * 19."
+        },
+        {
+            "step_id": "step_01_action",
+            "instruction": "Compute COMBINED_SUM = PRODUCT_1 + PRODUCT_2."
+        },
+        {
+            "step_id": "step_02_action",
+            "instruction": "Compute AFTER_SUBTRACTION = COMBINED_SUM - 365."
+        },
+        {
+            "step_id": "step_03_action",
+            "instruction": "Compute AFTER_DIVISION = AFTER_SUBTRACTION / 3. Use exact integer form."
+        },
+        {
+            "step_id": "step_04_action",
+            "instruction": "Compute AFTER_ADDITION = AFTER_DIVISION + 51."
+        },
+        {
+            "step_id": "step_05_action",
+            "instruction": "Compute AFTER_MULTIPLICATION = AFTER_ADDITION * 2."
+        },
+        {
+            "step_id": "step_06_action",
+            "instruction": "Compute AFTER_REDUCTION = AFTER_MULTIPLICATION / 3. Use exact integer form."
+        },
+        {
+            "step_id": "step_07_action",
+            "instruction": "Compute FINAL_NUMERATOR = AFTER_REDUCTION - 1."
+        },
+        {
+            "step_id": "step_08_action",
+            "instruction": "Compute FINAL_RESULT = FINAL_NUMERATOR / 7. Keep FINAL_RESULT in exact fraction form, not decimal."
+        },
+        {
+            "step_id": "step_09_action",
+            "instruction": "Review the full exact slot chain mentally and preserve all slot names and exact values."
+        },
+        {
+            "step_id": "step_10_action",
+            "instruction": "Assume your intermediate mathematical state is now lost. Only this vague note remains: 'multiplications, subtraction, division, addition, and reduction were completed correctly earlier'."
+        },
+        {
+            "step_id": "step_11_action",
+            "instruction": "Begin reconstructing the exact named state from the original problem. Do not skip slots."
+        },
+        {
+            "step_id": "step_12_action",
+            "instruction": "Continue reconstructing the exact named slots and their values."
+        },
+        {
+            "step_id": "step_13_action",
+            "instruction": "Continue reconstructing the exact named slots and their values."
+        },
+        {
+            "step_id": "step_14_action",
+            "instruction": "Continue reconstructing toward the exact canonical state."
+        },
+        {
+            "step_id": "step_15_action",
+            "instruction": "Continue reconstructing toward the exact canonical state."
+        },
+        {
+            "step_id": "step_16_action",
+            "instruction": "Continue reconstructing toward the exact canonical state."
+        },
+        {
+            "step_id": "step_17_action",
+            "instruction": "Continue reconstructing toward the exact canonical state."
+        },
+        {
+            "step_id": "step_18_action",
+            "instruction": "Continue reconstructing toward the exact canonical state."
+        },
+        {
+            "step_id": "step_19_action",
+            "instruction": "Complete the recovery and verify that every named slot is restored with its exact canonical value."
+        },
+        {
+            "step_id": "step_99_final_report",
+            "instruction": "Return your final answer using exactly these plain-text headings and no variations: CHECKPOINT 0 - INITIAL STATE, CHECKPOINT 5 - FORWARD STATE, CHECKPOINT 10 - FORWARD STATE, CHECKPOINT 15 - RECOVERED STATE, CHECKPOINT 20 - FINAL STATE, FINAL RETAINED UNITS, FINAL LOST UNITS. Under each checkpoint section, list exact slot lines only in the form SLOT_NAME: VALUE. Use all slot names: PRODUCT_1, PRODUCT_2, COMBINED_SUM, AFTER_SUBTRACTION, AFTER_DIVISION, AFTER_ADDITION, AFTER_MULTIPLICATION, AFTER_REDUCTION, FINAL_NUMERATOR, FINAL_RESULT. Under FINAL LOST UNITS, list lost slot names or write NONE. FINAL_RESULT must remain in exact fraction form."
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+{
+  "metric_name": "reuse_rate",
+  "metric_type": "knowledge_persistence",
+  "metric_description": "Relative share of reused context references versus new artifact emission during execution.",
+  "metric_formula": "reference_count / max(reference_count + artifact_suggested_count, 1)",
+  "metric_direction": "higher_is_better",
+  "metric_range": "0_to_1"
+}

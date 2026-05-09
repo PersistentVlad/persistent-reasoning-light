@@ -1,0 +1,8 @@
+{
+  "metric_name": "memory_compression_ratio",
+  "metric_type": "memory_efficiency",
+  "metric_description": "Ratio of raw data size to compressed or curated memory size.",
+  "metric_formula": "raw_tokens / curated_tokens",
+  "metric_direction": "higher_is_better",
+  "metric_range": "ratio"
+}

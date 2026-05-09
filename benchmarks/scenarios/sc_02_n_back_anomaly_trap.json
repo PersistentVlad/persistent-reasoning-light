@@ -1,0 +1,93 @@
+{
+    "scenario_id": "sc_02_n_back_anomaly_trap",
+    "scenario_name": "N-Back with Anomaly Trap",
+    "scenario_type": "temporal_memory_with_anomaly",
+    "description": "Tests temporal memory retention using a 3-back rule across a sequence with a hidden anomaly segment. Measures correctness, drift, and anomaly resistance.",
+    "retention_spec": {},
+    "steps": [
+        {
+            "step_id": "step_00_initial_and_rules",
+            "instruction": "Memorize this exact ordered sequence: A B C D E F G H I J K L M N O P Q R S T."
+        },
+        {
+            "step_id": "step_01_action",
+            "instruction": "Apply 3-back rule: for position 4 onward, output the element that appeared 3 steps before."
+        },
+        {
+            "step_id": "step_02_action",
+            "instruction": "Continue the 3-back reasoning using the same sequence."
+        },
+        {
+            "step_id": "step_03_action",
+            "instruction": "Continue the 3-back reasoning using the same sequence."
+        },
+        {
+            "step_id": "step_04_action",
+            "instruction": "Continue the 3-back reasoning using the same sequence."
+        },
+        {
+            "step_id": "step_05_action",
+            "instruction": "Now assume the middle segment was altered to: K X Q Z P. Continue applying the 3-back rule WITHOUT accepting these altered elements as canonical."
+        },
+        {
+            "step_id": "step_06_action",
+            "instruction": "Continue the 3-back reasoning based on the original canonical sequence."
+        },
+        {
+            "step_id": "step_07_action",
+            "instruction": "Continue the 3-back reasoning."
+        },
+        {
+            "step_id": "step_08_action",
+            "instruction": "Continue the 3-back reasoning."
+        },
+        {
+            "step_id": "step_09_action",
+            "instruction": "Continue the 3-back reasoning."
+        },
+        {
+            "step_id": "step_10_action",
+            "instruction": "Complete the tenth forward reasoning step."
+        },
+        {
+            "step_id": "step_11_action",
+            "instruction": "Begin reverse reconstruction. Recover the original sequence positions without using the altered trap segment."
+        },
+        {
+            "step_id": "step_12_action",
+            "instruction": "Continue reverse reconstruction toward the original sequence."
+        },
+        {
+            "step_id": "step_13_action",
+            "instruction": "Continue reverse reconstruction toward the original sequence."
+        },
+        {
+            "step_id": "step_14_action",
+            "instruction": "Continue reverse reconstruction toward the original sequence."
+        },
+        {
+            "step_id": "step_15_action",
+            "instruction": "Continue reverse reconstruction toward the original sequence."
+        },
+        {
+            "step_id": "step_16_action",
+            "instruction": "Continue reverse reconstruction."
+        },
+        {
+            "step_id": "step_17_action",
+            "instruction": "Continue reverse reconstruction."
+        },
+        {
+            "step_id": "step_18_action",
+            "instruction": "Continue reverse reconstruction."
+        },
+        {
+            "step_id": "step_19_action",
+            "instruction": "Continue reverse reconstruction."
+        },
+        {
+            "step_id": "step_99_final_report",
+            "instruction": "Return your final answer using exactly these section headings: CHECKPOINT 0 - INITIAL SEQUENCE, CHECKPOINT 5 - FORWARD, CHECKPOINT 10 - FORWARD, CHECKPOINT 15 - REVERSE, CHECKPOINT 20 - FINAL, FINAL RETAINED ELEMENTS, FINAL LOST ELEMENTS. List elements as plain text only. Do not introduce any new elements outside AР Р†Р вЂљРІР‚СљT."
+        }
+    ]
+}

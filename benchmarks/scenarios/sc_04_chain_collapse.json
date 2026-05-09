@@ -1,0 +1,91 @@
+{
+    "scenario_id":  "sc_04_chain_collapse",
+    "scenario_name":  "Reasoning Chain Collapse",
+    "scenario_type":  "chain_dependency_retention",
+    "description":  "Tests whether an agent can preserve a long dependency chain under expansion, compression, and reconstruction pressure using exact chain units.",
+    "retention_spec":  {
+
+                       },
+    "steps":  [
+                  {
+                      "step_id":  "step_00_initial_and_rules",
+                      "instruction":  "Memorize this exact dependency chain: S1 Р Р†РІР‚В РІР‚в„ў S2 Р Р†РІР‚В РІР‚в„ў S3 Р Р†РІР‚В РІР‚в„ў S4 Р Р†РІР‚В РІР‚в„ў S5 Р Р†РІР‚В РІР‚в„ў S6 Р Р†РІР‚В РІР‚в„ў S7 Р Р†РІР‚В РІР‚в„ў S8 Р Р†РІР‚В РІР‚в„ў S9 Р Р†РІР‚В РІР‚в„ў S10 Р Р†РІР‚В РІР‚в„ў S11 Р Р†РІР‚В РІР‚в„ў S12 Р Р†РІР‚В РІР‚в„ў S13 Р Р†РІР‚В РІР‚в„ў S14 Р Р†РІР‚В РІР‚в„ў S15."
+                  },
+                  {
+                      "step_id":  "step_01_action",
+                      "instruction":  "Expand the chain by grouping steps into phases, but preserve every exact step id."
+                  },
+                  {
+                      "step_id":  "step_02_action",
+                      "instruction":  "Add dependency annotations between steps while preserving every exact step id."
+                  },
+                  {
+                      "step_id":  "step_03_action",
+                      "instruction":  "Reorganize the chain into three logical blocks while preserving all step ids."
+                  },
+                  {
+                      "step_id":  "step_04_action",
+                      "instruction":  "Continue restructuring the chain without losing any step ids."
+                  },
+                  {
+                      "step_id":  "step_05_action",
+                      "instruction":  "Compress the chain into a shorter description while preserving all step ids."
+                  },
+                  {
+                      "step_id":  "step_06_action",
+                      "instruction":  "Further compress the chain, still preserving all step ids."
+                  },
+                  {
+                      "step_id":  "step_07_action",
+                      "instruction":  "Rewrite the chain in a minimal compact form while preserving all step ids."
+                  },
+                  {
+                      "step_id":  "step_08_action",
+                      "instruction":  "Continue compression without dropping any step ids."
+                  },
+                  {
+                      "step_id":  "step_09_action",
+                      "instruction":  "Produce the most compact valid representation of the chain."
+                  },
+                  {
+                      "step_id":  "step_10_action",
+                      "instruction":  "Reconstruct the full chain from the compressed representation."
+                  },
+                  {
+                      "step_id":  "step_11_action",
+                      "instruction":  "Continue reconstructing the full chain."
+                  },
+                  {
+                      "step_id":  "step_12_action",
+                      "instruction":  "Restore the original ordering of the chain."
+                  },
+                  {
+                      "step_id":  "step_13_action",
+                      "instruction":  "Ensure all dependencies are restored."
+                  },
+                  {
+                      "step_id":  "step_14_action",
+                      "instruction":  "Complete reconstruction of the full chain."
+                  },
+                  {
+                      "step_id":  "step_15_action",
+                      "instruction":  "Reverse the chain order without losing any step ids."
+                  },
+                  {
+                      "step_id":  "step_16_action",
+                      "instruction":  "Return the chain back to its original order."
+                  },
+                  {
+                      "step_id":  "step_17_action",
+                      "instruction":  "Verify that the chain matches the original structure."
+                  },
+                  {
+                      "step_id":  "step_18_action",
+                      "instruction":  "Ensure no step ids were lost or added."
+                  },
+                  {
+                      "step_id":  "step_99_final_report",
+                      "instruction":  "Return your final answer using exactly these headings: CHECKPOINT 0 - INITIAL CHAIN, CHECKPOINT 5 - EXPANDED, CHECKPOINT 10 - COMPRESSED, CHECKPOINT 15 - RECOVERED, CHECKPOINT 20 - FINAL, FINAL RETAINED STEPS, FINAL LOST STEPS. List steps as plain text only. Do not introduce new step ids beyond S1Р Р†Р вЂљРІР‚СљS15."
+                  }
+              ]
+}

@@ -1,0 +1,8 @@
+{
+  "metric_name": "steps_to_completion",
+  "metric_type": "operational_cost",
+  "metric_description": "Number of reasoning steps required to complete the task.",
+  "metric_formula": "total_reasoning_steps",
+  "metric_direction": "lower_is_better",
+  "metric_range": "count"
+}

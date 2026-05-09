@@ -1,0 +1,89 @@
+{
+    "scenario_id": "sc_07_trail_making",
+    "scenario_name": "Trail Making",
+    "scenario_type": "ordered_dependency_switching",
+    "description": "Tests whether an agent can preserve an alternating ordered trail under forward progression, local disruption, and reverse recovery using exact step units.",
+    "retention_spec": {},
+    "steps": [
+        {
+            "step_id": "step_00_initial_and_rules",
+            "instruction": "Memorize this exact alternating trail: 1-A 2-B 3-C 4-D 5-E 6-F 7-G 8-H 9-I 10-J."
+        },
+        {
+            "step_id": "step_01_action",
+            "instruction": "Rewrite the same trail as numbered ordered steps while preserving every exact pair."
+        },
+        {
+            "step_id": "step_02_action",
+            "instruction": "Regroup the trail into two halves while preserving every exact pair and the internal order."
+        },
+        {
+            "step_id": "step_03_action",
+            "instruction": "Rewrite the trail in one compact plain-text line while preserving every exact pair."
+        },
+        {
+            "step_id": "step_04_action",
+            "instruction": "Continue carrying the exact alternating trail forward without losing any pair."
+        },
+        {
+            "step_id": "step_05_action",
+            "instruction": "Now assume a local disruption occurred and the following incorrect middle fragment appeared: 5-G 6-E 7-F. Do not accept this fragment as canonical."
+        },
+        {
+            "step_id": "step_06_action",
+            "instruction": "Continue reasoning using the original canonical trail, not the disrupted fragment."
+        },
+        {
+            "step_id": "step_07_action",
+            "instruction": "Reconstruct the correct alternating order around the disrupted region."
+        },
+        {
+            "step_id": "step_08_action",
+            "instruction": "Continue restoring the full canonical trail."
+        },
+        {
+            "step_id": "step_09_action",
+            "instruction": "Produce the disrupted/reconstructed state while preserving only canonical exact pairs."
+        },
+        {
+            "step_id": "step_10_action",
+            "instruction": "Begin full recovery of the original trail."
+        },
+        {
+            "step_id": "step_11_action",
+            "instruction": "Continue full recovery of the original trail."
+        },
+        {
+            "step_id": "step_12_action",
+            "instruction": "Continue full recovery of the original trail."
+        },
+        {
+            "step_id": "step_13_action",
+            "instruction": "Restore the exact pair ordering of the original trail."
+        },
+        {
+            "step_id": "step_14_action",
+            "instruction": "Complete recovery of the exact canonical trail."
+        },
+        {
+            "step_id": "step_15_action",
+            "instruction": "Reverse the canonical trail order while preserving every exact pair."
+        },
+        {
+            "step_id": "step_16_action",
+            "instruction": "Return the reversed trail back to original canonical order."
+        },
+        {
+            "step_id": "step_17_action",
+            "instruction": "Verify that the restored trail exactly matches the canonical original."
+        },
+        {
+            "step_id": "step_18_action",
+            "instruction": "Ensure no pair has been lost, duplicated, or altered."
+        },
+        {
+            "step_id": "step_99_final_report",
+            "instruction": "Return your final answer using exactly these headings: CHECKPOINT 0 - INITIAL TRAIL, CHECKPOINT 5 - FORWARD TRAIL, CHECKPOINT 10 - DISRUPTED TRAIL, CHECKPOINT 15 - RECOVERED TRAIL, CHECKPOINT 20 - FINAL TRAIL, FINAL RETAINED PAIRS, FINAL LOST PAIRS. Under CHECKPOINT 20 - FINAL TRAIL, include exactly one line: FINAL_TRAIL: 1-A 2-B 3-C 4-D 5-E 6-F 7-G 8-H 9-I 10-J if fully correct. Do not invent any pair outside the canonical set."
+        }
+    ]
+}

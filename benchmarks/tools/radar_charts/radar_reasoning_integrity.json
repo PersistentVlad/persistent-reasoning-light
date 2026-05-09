@@ -1,0 +1,12 @@
+{
+  "radar_name": "reasoning_integrity",
+  "description": "Measures how well reasoning maintains structure, avoids drift, and preserves knowledge over time.",
+  "use_normalized_scores": true,
+  "metrics": [
+    "reasoning_drift_rate",
+    "rediscovery_rate",
+    "context_growth_rate",
+    "structural_integrity_score",
+    "knowledge_retention_rate"
+  ]
+}

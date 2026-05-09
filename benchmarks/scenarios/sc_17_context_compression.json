@@ -1,0 +1,24 @@
+{
+    "scenario_id":  "sc_17_context_compression",
+    "scenario_name":  "Context Compression Under Constraints",
+    "scenario_type":  "context_compression_efficiency",
+    "description":  "Tests whether an agent can compress a growing context into a minimal representation while preserving essential reasoning elements.",
+    "steps":  [
+                  {
+                      "step_id":  "step_00_initial_and_rules",
+                      "instruction":  "Start the task: design a system for managing personal knowledge notes. Define entities, relationships, and basic workflows. Provide a moderately detailed structure."
+                  },
+                  {
+                      "step_id":  "step_01_action",
+                      "instruction":  "Extend the system with additional features: tagging, search, and version history. Update your design accordingly."
+                  },
+                  {
+                      "step_id":  "step_02_action",
+                      "instruction":  "The context is now too large. Compress your current design into a minimal structured representation that preserves all essential elements."
+                  },
+                  {
+                      "step_id":  "step_03_final",
+                      "instruction":  "Using only your compressed representation, continue the design and provide a final structured solution."
+                  }
+              ]
+}

@@ -1,0 +1,113 @@
+{
+  "contract_version": "1.4",
+  "identity": {
+    "scenario_id": "sc_06_plan_reset"
+  },
+  "migration_lock": {
+    "execution_contract": false,
+    "interpretation_support": false,
+    "interpretation_contract": false,
+    "retention_contract": true,
+    "correctness_contract": true,
+    "ghost_contract": true
+  },
+  "execution_contract": {
+    "scenario_mode": "standard",
+    "showcase": false,
+    "status": "stable",
+    "return_to_origin": false
+  },
+  "interpretation_support": {
+    "supports_retention": true,
+    "supports_correctness": false,
+    "supports_ghost": true,
+    "supports_temporal_ghost": true,
+    "trajectory_readiness": "deferred"
+  },
+  "interpretation_contract": {
+    "interpretation_variant": "structural_retention_deferred",
+    "layer_support": {
+      "retention": "deferred",
+      "correctness": "unsupported",
+      "ghost": "deferred"
+    },
+    "reason": "reset-boundary structural metadata is aligned, but dedicated interpretation support remains deferred"
+  },
+  "retention_contract": {
+    "retention_type": "structural_retention_deferred",
+    "unit_groups": [
+      {
+        "group_id": "old_plan",
+        "label": "Old Plan Units",
+        "unit_ids": [
+          "P1",
+          "P2",
+          "P3",
+          "P4",
+          "P5",
+          "P6"
+        ]
+      },
+      {
+        "group_id": "new_plan",
+        "label": "New Plan Units",
+        "unit_ids": [
+          "N1",
+          "N2",
+          "N3",
+          "N4",
+          "N5",
+          "N6"
+        ]
+      }
+    ],
+    "checkpoints": [
+      {
+        "checkpoint_id": "checkpoint_00_initial",
+        "checkpoint_label": "Initial Plan",
+        "section_heading": "CHECKPOINT 0 - INITIAL PLAN"
+      },
+      {
+        "checkpoint_id": "checkpoint_01",
+        "checkpoint_label": "Extended Plan",
+        "section_heading": "CHECKPOINT 5 - EXTENDED PLAN"
+      },
+      {
+        "checkpoint_id": "checkpoint_02",
+        "checkpoint_label": "Invalidated",
+        "section_heading": "CHECKPOINT 10 - INVALIDATED PLAN"
+      },
+      {
+        "checkpoint_id": "checkpoint_03",
+        "checkpoint_label": "Reset",
+        "section_heading": "CHECKPOINT 15 - RESET PLAN"
+      },
+      {
+        "checkpoint_id": "checkpoint_99_final",
+        "checkpoint_label": "Final",
+        "section_heading": "CHECKPOINT 20 - FINAL PLAN"
+      }
+    ],
+    "final_sections": {
+      "retained": "FINAL RETAINED UNITS",
+      "lost": "FINAL LOST UNITS"
+    },
+    "required_exact_section_headings": [
+      "CHECKPOINT 0 - INITIAL PLAN",
+      "CHECKPOINT 5 - EXTENDED PLAN",
+      "CHECKPOINT 10 - INVALIDATED PLAN",
+      "CHECKPOINT 15 - RESET PLAN",
+      "CHECKPOINT 20 - FINAL PLAN",
+      "FINAL RETAINED UNITS",
+      "FINAL LOST UNITS"
+    ]
+  },
+  "correctness_contract": null,
+  "ghost_contract": {
+    "token_pattern": "P[0-9]+|N[0-9]+",
+    "valid_transformations": {}
+  },
+  "trajectory_contract": null,
+  "expected_ready": false,
+  "expected_file": null
+}

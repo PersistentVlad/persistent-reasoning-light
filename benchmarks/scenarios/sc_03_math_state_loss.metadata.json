@@ -1,0 +1,117 @@
+{
+  "contract_version": "1.4",
+  "identity": {
+    "scenario_id": "sc_03_math_state_loss"
+  },
+  "migration_lock": {
+    "execution_contract": false,
+    "interpretation_support": false,
+    "interpretation_contract": false,
+    "retention_contract": true,
+    "correctness_contract": true,
+    "ghost_contract": true
+  },
+  "execution_contract": {
+    "scenario_mode": "standard",
+    "showcase": false,
+    "status": "stable",
+    "return_to_origin": true
+  },
+  "interpretation_support": {
+    "supports_retention": true,
+    "supports_correctness": true,
+    "supports_ghost": false,
+    "supports_temporal_ghost": true,
+    "trajectory_readiness": "deferred"
+  },
+  "interpretation_contract": {
+    "interpretation_variant": "math_retention_with_correctness",
+    "layer_support": {
+      "retention": "enabled",
+      "correctness": "enabled",
+      "ghost": "unsupported"
+    },
+    "reason": "canonical Phase 2 math scenario; strict retention and exact correctness checking are active"
+  },
+  "retention_contract": {
+    "retention_type": "math_retention_with_correctness",
+    "unit_groups": [
+      {
+        "group_id": "math_state",
+        "label": "Math State",
+        "unit_ids": [
+          "PRODUCT_1",
+          "PRODUCT_2",
+          "COMBINED_SUM",
+          "AFTER_SUBTRACTION",
+          "AFTER_DIVISION",
+          "AFTER_ADDITION",
+          "AFTER_MULTIPLICATION",
+          "AFTER_REDUCTION",
+          "FINAL_NUMERATOR",
+          "FINAL_RESULT"
+        ]
+      }
+    ],
+    "checkpoints": [
+      {
+        "checkpoint_id": "checkpoint_00_initial",
+        "checkpoint_label": "Initial State",
+        "section_heading": "CHECKPOINT 0 - INITIAL STATE"
+      },
+      {
+        "checkpoint_id": "checkpoint_01",
+        "checkpoint_label": "Forward 5",
+        "section_heading": "CHECKPOINT 5 - FORWARD STATE"
+      },
+      {
+        "checkpoint_id": "checkpoint_02",
+        "checkpoint_label": "Forward 10",
+        "section_heading": "CHECKPOINT 10 - FORWARD STATE"
+      },
+      {
+        "checkpoint_id": "checkpoint_03",
+        "checkpoint_label": "Recovered 5",
+        "section_heading": "CHECKPOINT 15 - RECOVERED STATE"
+      },
+      {
+        "checkpoint_id": "checkpoint_99_final",
+        "checkpoint_label": "Final",
+        "section_heading": "CHECKPOINT 20 - FINAL STATE"
+      }
+    ],
+    "final_sections": {
+      "retained": "FINAL RETAINED UNITS",
+      "lost": "FINAL LOST UNITS"
+    },
+    "required_exact_section_headings": [
+      "CHECKPOINT 0 - INITIAL STATE",
+      "CHECKPOINT 5 - FORWARD STATE",
+      "CHECKPOINT 10 - FORWARD STATE",
+      "CHECKPOINT 15 - RECOVERED STATE",
+      "CHECKPOINT 20 - FINAL STATE",
+      "FINAL RETAINED UNITS",
+      "FINAL LOST UNITS"
+    ]
+  },
+  "correctness_contract": {
+    "slot_section_heading": "CHECKPOINT 20 - FINAL STATE",
+    "value_match_policy": "exact_string",
+    "expected_slot_values": {
+      "PRODUCT_1": "1081",
+      "PRODUCT_2": "1102",
+      "COMBINED_SUM": "2183",
+      "AFTER_SUBTRACTION": "1818",
+      "AFTER_DIVISION": "606",
+      "AFTER_ADDITION": "657",
+      "AFTER_MULTIPLICATION": "1314",
+      "AFTER_REDUCTION": "438",
+      "FINAL_NUMERATOR": "437",
+      "FINAL_RESULT": "437/7"
+    }
+  },
+  "ghost_contract": null,
+  "trajectory_contract": null,
+  "expected_ready": false,
+  "expected_file": null
+}

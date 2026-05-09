@@ -1,0 +1,12 @@
+{
+  "radar_name": "context_efficiency",
+  "description": "Measures how efficiently tokens, memory, and retrieval are used during reasoning.",
+  "use_normalized_scores": true,
+  "metrics": [
+    "token_reduction_ratio",
+    "memory_compression_ratio",
+    "retrieval_precision",
+    "context_utilization_rate",
+    "reuse_rate"
+  ]
+}

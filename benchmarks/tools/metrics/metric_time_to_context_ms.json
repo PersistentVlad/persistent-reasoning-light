@@ -1,0 +1,8 @@
+{
+  "metric_name": "time_to_context_ms",
+  "metric_type": "operational_cost",
+  "metric_description": "Time required to prepare usable context before reasoning starts.",
+  "metric_formula": "context_ready_time_ms - request_start_time_ms",
+  "metric_direction": "lower_is_better",
+  "metric_range": "time_ms"
+}

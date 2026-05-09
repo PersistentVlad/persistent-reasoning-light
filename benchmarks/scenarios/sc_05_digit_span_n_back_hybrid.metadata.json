@@ -1,0 +1,111 @@
+{
+  "contract_version": "1.4",
+  "identity": {
+    "scenario_id": "sc_05_digit_span_n_back_hybrid"
+  },
+  "migration_lock": {
+    "execution_contract": false,
+    "interpretation_support": false,
+    "interpretation_contract": false,
+    "retention_contract": true,
+    "correctness_contract": true,
+    "ghost_contract": true
+  },
+  "execution_contract": {
+    "scenario_mode": "standard",
+    "showcase": false,
+    "status": "stable",
+    "return_to_origin": false
+  },
+  "interpretation_support": {
+    "supports_retention": true,
+    "supports_correctness": true,
+    "supports_ghost": true,
+    "supports_temporal_ghost": true,
+    "trajectory_readiness": "deferred"
+  },
+  "interpretation_contract": {
+    "interpretation_variant": "sequence_retention_with_correctness_deferred",
+    "layer_support": {
+      "retention": "deferred",
+      "correctness": "deferred",
+      "ghost": "deferred"
+    },
+    "reason": "sequence, correctness, and ghost metadata are aligned for a later refactor, but this exact variant is not engine-supported yet"
+  },
+  "retention_contract": {
+    "retention_type": "sequence_retention_with_correctness_deferred",
+    "unit_groups": [
+      {
+        "group_id": "digits",
+        "label": "Digits",
+        "unit_ids": [
+          "3",
+          "7",
+          "2",
+          "9",
+          "4",
+          "6",
+          "8",
+          "1",
+          "5",
+          "0"
+        ]
+      }
+    ],
+    "checkpoints": [
+      {
+        "checkpoint_id": "checkpoint_00_initial",
+        "checkpoint_label": "Initial",
+        "section_heading": "CHECKPOINT 0 - INITIAL SEQUENCE"
+      },
+      {
+        "checkpoint_id": "checkpoint_01",
+        "checkpoint_label": "Forward",
+        "section_heading": "CHECKPOINT 5 - TRANSFORMED"
+      },
+      {
+        "checkpoint_id": "checkpoint_02",
+        "checkpoint_label": "NBack",
+        "section_heading": "CHECKPOINT 10 - NBACK"
+      },
+      {
+        "checkpoint_id": "checkpoint_03",
+        "checkpoint_label": "Recovered",
+        "section_heading": "CHECKPOINT 15 - RECOVERED"
+      },
+      {
+        "checkpoint_id": "checkpoint_99_final",
+        "checkpoint_label": "Final",
+        "section_heading": "CHECKPOINT 20 - FINAL"
+      }
+    ],
+    "final_sections": {
+      "retained": "FINAL RETAINED DIGITS",
+      "lost": "FINAL LOST DIGITS"
+    },
+    "required_exact_section_headings": [
+      "CHECKPOINT 0 - INITIAL SEQUENCE",
+      "CHECKPOINT 5 - TRANSFORMED",
+      "CHECKPOINT 10 - NBACK",
+      "CHECKPOINT 15 - RECOVERED",
+      "CHECKPOINT 20 - FINAL",
+      "FINAL RETAINED DIGITS",
+      "FINAL LOST DIGITS"
+    ]
+  },
+  "correctness_contract": {
+    "slot_section_heading": "CHECKPOINT 20 - FINAL",
+    "value_match_policy": "exact_string",
+    "expected_slot_values": {
+      "FINAL_SEQUENCE": "3 7 2 9 4 6 8 1 5 0"
+    }
+  },
+  "ghost_contract": {
+    "token_pattern": "[0-9]+",
+    "valid_transformations": {}
+  },
+  "trajectory_contract": null,
+  "expected_ready": false,
+  "expected_file": null
+}

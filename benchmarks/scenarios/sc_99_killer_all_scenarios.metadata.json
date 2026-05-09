@@ -1,0 +1,243 @@
+{
+  "contract_version": "1.6",
+  "identity": {
+    "scenario_id": "sc_99_killer_all_scenarios"
+  },
+  "migration_lock": {
+    "execution_contract": false,
+    "interpretation_support": false,
+    "interpretation_contract": false,
+    "retention_contract": true,
+    "correctness_contract": true,
+    "ghost_contract": false,
+    "section_correctness_contract": true,
+    "section_ghost_contract": true
+  },
+  "execution_contract": {
+    "scenario_mode": "sectioned",
+    "showcase": true,
+    "status": "stable",
+    "return_to_origin": false
+  },
+  "interpretation_support": {
+    "supports_retention": true,
+    "supports_correctness": true,
+    "supports_ghost": true,
+    "supports_temporal_ghost": true,
+    "trajectory_readiness": "deferred"
+  },
+  "interpretation_contract": {
+    "interpretation_variant": "sectioned_composite_interpretation",
+    "layer_support": {
+      "retention": "enabled",
+      "correctness": "enabled",
+      "ghost": "enabled"
+    },
+    "reason": "composite stress scenario with independent section evaluation; sections 1-2 are interpreted now and sections 3-5 remain deferred",
+    "sections": [
+      {
+        "section_id": "section_1_structural_retention",
+        "interpretation_variant": "structural_retention_with_ghost",
+        "layer_support": {
+          "retention": "enabled",
+          "correctness": "deferred",
+          "ghost": "enabled"
+        }
+      },
+      {
+        "section_id": "section_2_math_state_loss",
+        "interpretation_variant": "math_retention_with_correctness",
+        "layer_support": {
+          "retention": "enabled",
+          "correctness": "enabled",
+          "ghost": "unsupported"
+        }
+      },
+      {
+        "section_id": "section_3_n_back_anomaly_trap",
+        "interpretation_variant": "sequence_retention_deferred",
+        "layer_support": {
+          "retention": "deferred",
+          "correctness": "unsupported",
+          "ghost": "deferred"
+        },
+        "reason": "sequence/anomaly interpretation remains deferred in the current engine"
+      },
+      {
+        "section_id": "section_4_trail_making",
+        "interpretation_variant": "ordered_trail_retention_with_correctness_deferred",
+        "layer_support": {
+          "retention": "deferred",
+          "correctness": "deferred",
+          "ghost": "deferred"
+        },
+        "reason": "ordered-trail interpretation remains deferred in the current engine"
+      },
+      {
+        "section_id": "section_5_move_clock_hands",
+        "interpretation_variant": "structural_retention_with_correctness_deferred",
+        "layer_support": {
+          "retention": "deferred",
+          "correctness": "deferred",
+          "ghost": "deferred"
+        },
+        "reason": "clock-state interpretation remains deferred in the current engine"
+      }
+    ]
+  },
+  "retention_contract": {
+    "retention_type": "sectioned_composite_retention",
+    "checkpoints": [
+      {
+        "checkpoint_id": "checkpoint_00_initial",
+        "checkpoint_label": "Initial Composite",
+        "section_heading": "CHECKPOINT 0 - INITIAL COMPOSITE"
+      },
+      {
+        "checkpoint_id": "checkpoint_01_after_forward",
+        "checkpoint_label": "Forward Composite",
+        "section_heading": "CHECKPOINT 5 - FORWARD COMPOSITE"
+      },
+      {
+        "checkpoint_id": "checkpoint_02_after_forward",
+        "checkpoint_label": "Forward Composite 10",
+        "section_heading": "CHECKPOINT 10 - FORWARD COMPOSITE"
+      },
+      {
+        "checkpoint_id": "checkpoint_03_after_recovered",
+        "checkpoint_label": "Recovered Composite",
+        "section_heading": "CHECKPOINT 15 - RECOVERED COMPOSITE"
+      },
+      {
+        "checkpoint_id": "checkpoint_99_final",
+        "checkpoint_label": "Final Composite",
+        "section_heading": "CHECKPOINT 20 - FINAL COMPOSITE"
+      }
+    ],
+    "final_sections": {
+      "retained": "FINAL RETAINED SECTIONS",
+      "lost": "FINAL LOST SECTIONS"
+    },
+    "required_exact_section_headings": [
+      "CHECKPOINT 0 - INITIAL COMPOSITE",
+      "CHECKPOINT 5 - FORWARD COMPOSITE",
+      "CHECKPOINT 10 - FORWARD COMPOSITE",
+      "CHECKPOINT 15 - RECOVERED COMPOSITE",
+      "CHECKPOINT 20 - FINAL COMPOSITE",
+      "FINAL RETAINED SECTIONS",
+      "FINAL LOST SECTIONS"
+    ],
+    "sections": [
+      {
+        "section_id": "section_1_structural_retention",
+        "retention_type": "structural_retention",
+        "unit_groups": [
+          {
+            "group_id": "facts",
+            "label": "Facts",
+            "unit_ids": [
+              "F1",
+              "F2",
+              "F3",
+              "F4",
+              "F5",
+              "F6",
+              "F7",
+              "F8",
+              "F9",
+              "F10"
+            ]
+          },
+          {
+            "group_id": "dependencies",
+            "label": "Dependencies",
+            "unit_ids": [
+              "D1",
+              "D2",
+              "D3",
+              "D4",
+              "D5",
+              "D6"
+            ]
+          },
+          {
+            "group_id": "constraints",
+            "label": "Constraints",
+            "unit_ids": [
+              "C1",
+              "C2",
+              "C3",
+              "C4"
+            ]
+          }
+        ]
+      },
+      {
+        "section_id": "section_2_math_state_loss",
+        "retention_type": "math_retention_with_correctness",
+        "unit_groups": [
+          {
+            "group_id": "math_state",
+            "label": "Math State",
+            "unit_ids": [
+              "PRODUCT_1",
+              "PRODUCT_2",
+              "COMBINED_SUM",
+              "AFTER_SUBTRACTION",
+              "AFTER_DIVISION",
+              "AFTER_ADDITION",
+              "AFTER_MULTIPLICATION",
+              "AFTER_REDUCTION",
+              "FINAL_NUMERATOR",
+              "FINAL_RESULT"
+            ]
+          }
+        ]
+      },
+      {
+        "section_id": "section_3_n_back_anomaly_trap"
+      },
+      {
+        "section_id": "section_4_trail_making"
+      },
+      {
+        "section_id": "section_5_move_clock_hands"
+      }
+    ]
+  },
+  "section_correctness_contracts": [
+    {
+      "section_id": "section_2_math_state_loss",
+      "correctness_contract": {
+        "slot_section_heading": "SECTION 2 - MATH STATE LOSS",
+        "value_match_policy": "exact_string",
+        "expected_slot_values": {
+          "PRODUCT_1": "1081",
+          "PRODUCT_2": "1102",
+          "COMBINED_SUM": "2183",
+          "AFTER_SUBTRACTION": "1818",
+          "AFTER_DIVISION": "606",
+          "AFTER_ADDITION": "657",
+          "AFTER_MULTIPLICATION": "1314",
+          "AFTER_REDUCTION": "438",
+          "FINAL_NUMERATOR": "437",
+          "FINAL_RESULT": "437/7"
+        }
+      }
+    }
+  ],
+  "section_ghost_contracts": [
+    {
+      "section_id": "section_1_structural_retention",
+      "ghost_contract": {
+        "token_pattern": "[A-Z][0-9]+",
+        "valid_transformations": {}
+      }
+    }
+  ],
+  "correctness_contract": null,
+  "ghost_contract": null,
+  "trajectory_contract": null,
+  "expected_ready": false,
+  "expected_file": null
+}

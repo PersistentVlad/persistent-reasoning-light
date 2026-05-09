@@ -1,0 +1,127 @@
+{
+  "contract_version": "1.4",
+  "identity": {
+    "scenario_id": "sc_01_structural_retention"
+  },
+  "migration_lock": {
+    "execution_contract": false,
+    "interpretation_support": false,
+    "interpretation_contract": false,
+    "retention_contract": true,
+    "correctness_contract": true,
+    "ghost_contract": true
+  },
+  "execution_contract": {
+    "scenario_mode": "standard",
+    "showcase": false,
+    "status": "stable",
+    "return_to_origin": false
+  },
+  "interpretation_support": {
+    "supports_retention": true,
+    "supports_correctness": false,
+    "supports_ghost": true,
+    "supports_temporal_ghost": true,
+    "trajectory_readiness": "ready"
+  },
+  "interpretation_contract": {
+    "interpretation_variant": "structural_retention_with_ghost",
+    "layer_support": {
+      "retention": "enabled",
+      "correctness": "deferred",
+      "ghost": "enabled"
+    },
+    "reason": "canonical structural retention scenario; strict retention and ghost parsing are active, correctness remains deferred"
+  },
+  "retention_contract": {
+    "retention_type": "structural_retention",
+    "unit_groups": [
+      {
+        "group_id": "facts",
+        "label": "Facts",
+        "unit_ids": [
+          "F1",
+          "F2",
+          "F3",
+          "F4",
+          "F5",
+          "F6",
+          "F7",
+          "F8",
+          "F9",
+          "F10"
+        ]
+      },
+      {
+        "group_id": "dependencies",
+        "label": "Dependencies",
+        "unit_ids": [
+          "D1",
+          "D2",
+          "D3",
+          "D4",
+          "D5",
+          "D6"
+        ]
+      },
+      {
+        "group_id": "constraints",
+        "label": "Constraints",
+        "unit_ids": [
+          "C1",
+          "C2",
+          "C3",
+          "C4"
+        ]
+      }
+    ],
+    "checkpoints": [
+      {
+        "checkpoint_id": "checkpoint_00_initial",
+        "checkpoint_label": "Initial",
+        "section_heading": "CHECKPOINT 0 - INITIAL"
+      },
+      {
+        "checkpoint_id": "checkpoint_01",
+        "checkpoint_label": "Forward 5",
+        "section_heading": "CHECKPOINT 5 - FORWARD"
+      },
+      {
+        "checkpoint_id": "checkpoint_02",
+        "checkpoint_label": "Forward 10",
+        "section_heading": "CHECKPOINT 10 - FORWARD"
+      },
+      {
+        "checkpoint_id": "checkpoint_03",
+        "checkpoint_label": "Reverse 5",
+        "section_heading": "CHECKPOINT 15 - REVERSE"
+      },
+      {
+        "checkpoint_id": "checkpoint_99_final",
+        "checkpoint_label": "Final",
+        "section_heading": "CHECKPOINT 20 - FINAL"
+      }
+    ],
+    "final_sections": {
+      "retained": "FINAL RETAINED UNITS",
+      "lost": "FINAL LOST UNITS"
+    },
+    "required_exact_section_headings": [
+      "CHECKPOINT 0 - INITIAL",
+      "CHECKPOINT 5 - FORWARD",
+      "CHECKPOINT 10 - FORWARD",
+      "CHECKPOINT 15 - REVERSE",
+      "CHECKPOINT 20 - FINAL",
+      "FINAL RETAINED UNITS",
+      "FINAL LOST UNITS"
+    ]
+  },
+  "correctness_contract": null,
+  "ghost_contract": {
+    "token_pattern": "[A-Z][0-9]+",
+    "valid_transformations": {}
+  },
+  "trajectory_contract": null,
+  "expected_ready": false,
+  "expected_file": null
+}

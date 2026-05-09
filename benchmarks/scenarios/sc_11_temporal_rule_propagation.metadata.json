@@ -1,0 +1,108 @@
+{
+  "contract_version": "1.4",
+  "identity": {
+    "scenario_id": "sc_11_temporal_rule_propagation"
+  },
+  "migration_lock": {
+    "execution_contract": false,
+    "interpretation_support": false,
+    "interpretation_contract": false,
+    "retention_contract": true,
+    "correctness_contract": true,
+    "ghost_contract": true
+  },
+  "execution_contract": {
+    "scenario_mode": "standard",
+    "showcase": false,
+    "status": "stable",
+    "return_to_origin": false
+  },
+  "interpretation_support": {
+    "supports_retention": true,
+    "supports_correctness": true,
+    "supports_ghost": true,
+    "supports_temporal_ghost": true,
+    "trajectory_readiness": "deferred"
+  },
+  "interpretation_contract": {
+    "interpretation_variant": "none",
+    "layer_support": {
+      "retention": "unsupported",
+      "correctness": "unsupported",
+      "ghost": "unsupported"
+    }
+  },
+  "retention_contract": {
+    "retention_type": "state_retention_with_correctness",
+    "unit_groups": [
+      {
+        "group_id": "state_variables",
+        "label": "State Variables",
+        "unit_ids": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    ],
+    "checkpoints": [
+      {
+        "checkpoint_id": "checkpoint_00_initial",
+        "checkpoint_label": "Initial State",
+        "section_heading": "CHECKPOINT 0 - INITIAL STATE"
+      },
+      {
+        "checkpoint_id": "checkpoint_01",
+        "checkpoint_label": "After Step 1",
+        "section_heading": "CHECKPOINT 2 - AFTER STEP 1"
+      },
+      {
+        "checkpoint_id": "checkpoint_02",
+        "checkpoint_label": "After Step 2",
+        "section_heading": "CHECKPOINT 3 - AFTER STEP 2"
+      },
+      {
+        "checkpoint_id": "checkpoint_03",
+        "checkpoint_label": "After Step 3",
+        "section_heading": "CHECKPOINT 4 - AFTER STEP 3"
+      },
+      {
+        "checkpoint_id": "checkpoint_99_final",
+        "checkpoint_label": "Final State",
+        "section_heading": "CHECKPOINT 5 - FINAL STATE"
+      }
+    ],
+    "final_sections": {
+      "retained": "FINAL RETAINED VARIABLES",
+      "lost": "FINAL LOST VARIABLES"
+    },
+    "required_exact_section_headings": [
+      "CHECKPOINT 0 - INITIAL STATE",
+      "CHECKPOINT 2 - AFTER STEP 1",
+      "CHECKPOINT 3 - AFTER STEP 2",
+      "CHECKPOINT 4 - AFTER STEP 3",
+      "CHECKPOINT 5 - FINAL STATE",
+      "FINAL RETAINED VARIABLES",
+      "FINAL LOST VARIABLES"
+    ]
+  },
+  "correctness_contract": {
+    "slot_section_heading": "CHECKPOINT 5 - FINAL STATE",
+    "value_match_policy": "exact_string",
+    "expected_slot_values": {
+      "A": "2",
+      "B": "2",
+      "C": "2",
+      "D": "3",
+      "FINAL_A": "2"
+    }
+  },
+  "ghost_contract": {
+    "token_pattern": "[ABCD]|FINAL_A",
+    "valid_transformations": {}
+  },
+  "trajectory_contract": null,
+  "expected_ready": false,
+  "expected_file": null
+}

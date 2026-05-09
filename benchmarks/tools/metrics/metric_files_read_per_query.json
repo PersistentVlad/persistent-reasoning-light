@@ -1,0 +1,8 @@
+{
+  "metric_name": "files_read_per_query",
+  "metric_type": "operational_cost",
+  "metric_description": "Average number of files accessed per query.",
+  "metric_formula": "files_read / total_queries",
+  "metric_direction": "lower_is_better",
+  "metric_range": "count"
+}

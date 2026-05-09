@@ -1,0 +1,8 @@
+{
+  "metric_name": "retrieval_precision",
+  "metric_type": "retrieval_quality",
+  "metric_description": "Fraction of retrieved context that is relevant to the task.",
+  "metric_formula": "relevant_tokens / total_retrieved_tokens",
+  "metric_direction": "higher_is_better",
+  "metric_range": "0_to_1"
+}

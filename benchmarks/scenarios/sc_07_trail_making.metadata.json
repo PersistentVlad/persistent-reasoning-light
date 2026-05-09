@@ -1,0 +1,111 @@
+{
+  "contract_version": "1.4",
+  "identity": {
+    "scenario_id": "sc_07_trail_making"
+  },
+  "migration_lock": {
+    "execution_contract": false,
+    "interpretation_support": false,
+    "interpretation_contract": false,
+    "retention_contract": true,
+    "correctness_contract": true,
+    "ghost_contract": true
+  },
+  "execution_contract": {
+    "scenario_mode": "standard",
+    "showcase": false,
+    "status": "stable",
+    "return_to_origin": false
+  },
+  "interpretation_support": {
+    "supports_retention": true,
+    "supports_correctness": true,
+    "supports_ghost": true,
+    "supports_temporal_ghost": true,
+    "trajectory_readiness": "deferred"
+  },
+  "interpretation_contract": {
+    "interpretation_variant": "ordered_trail_retention_with_correctness_deferred",
+    "layer_support": {
+      "retention": "deferred",
+      "correctness": "deferred",
+      "ghost": "deferred"
+    },
+    "reason": "ordered-trail retention, correctness, and ghost metadata are explicit, but scenario-specific interpretation support remains deferred"
+  },
+  "retention_contract": {
+    "retention_type": "ordered_trail_retention_with_correctness_deferred",
+    "unit_groups": [
+      {
+        "group_id": "trail_pairs",
+        "label": "Trail Pairs",
+        "unit_ids": [
+          "1-A",
+          "2-B",
+          "3-C",
+          "4-D",
+          "5-E",
+          "6-F",
+          "7-G",
+          "8-H",
+          "9-I",
+          "10-J"
+        ]
+      }
+    ],
+    "checkpoints": [
+      {
+        "checkpoint_id": "checkpoint_00_initial",
+        "checkpoint_label": "Initial Trail",
+        "section_heading": "CHECKPOINT 0 - INITIAL TRAIL"
+      },
+      {
+        "checkpoint_id": "checkpoint_01",
+        "checkpoint_label": "Forward Trail",
+        "section_heading": "CHECKPOINT 5 - FORWARD TRAIL"
+      },
+      {
+        "checkpoint_id": "checkpoint_02",
+        "checkpoint_label": "Disrupted Trail",
+        "section_heading": "CHECKPOINT 10 - DISRUPTED TRAIL"
+      },
+      {
+        "checkpoint_id": "checkpoint_03",
+        "checkpoint_label": "Recovered Trail",
+        "section_heading": "CHECKPOINT 15 - RECOVERED TRAIL"
+      },
+      {
+        "checkpoint_id": "checkpoint_99_final",
+        "checkpoint_label": "Final Trail",
+        "section_heading": "CHECKPOINT 20 - FINAL TRAIL"
+      }
+    ],
+    "final_sections": {
+      "retained": "FINAL RETAINED PAIRS",
+      "lost": "FINAL LOST PAIRS"
+    },
+    "required_exact_section_headings": [
+      "CHECKPOINT 0 - INITIAL TRAIL",
+      "CHECKPOINT 5 - FORWARD TRAIL",
+      "CHECKPOINT 10 - DISRUPTED TRAIL",
+      "CHECKPOINT 15 - RECOVERED TRAIL",
+      "CHECKPOINT 20 - FINAL TRAIL",
+      "FINAL RETAINED PAIRS",
+      "FINAL LOST PAIRS"
+    ]
+  },
+  "correctness_contract": {
+    "slot_section_heading": "CHECKPOINT 20 - FINAL TRAIL",
+    "value_match_policy": "exact_string",
+    "expected_slot_values": {
+      "FINAL_TRAIL": "1-A 2-B 3-C 4-D 5-E 6-F 7-G 8-H 9-I 10-J"
+    }
+  },
+  "ghost_contract": {
+    "token_pattern": "[0-9]+-[A-Z]",
+    "valid_transformations": {}
+  },
+  "trajectory_contract": null,
+  "expected_ready": false,
+  "expected_file": null
+}

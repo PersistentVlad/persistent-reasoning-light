@@ -1,0 +1,8 @@
+{
+  "metric_name": "artifact_suggested_count",
+  "metric_type": "emission_signal",
+  "metric_description": "Count of artifact suggestions surfaced during execution.",
+  "metric_formula": "count(artifact_suggested events)",
+  "metric_direction": "higher_is_better",
+  "metric_range": "count"
+}

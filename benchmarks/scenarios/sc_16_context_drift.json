@@ -1,0 +1,24 @@
+{
+    "scenario_id":  "sc_16_context_drift",
+    "scenario_name":  "Context Drift Under Similar Alternatives",
+    "scenario_type":  "reasoning_drift_detection",
+    "description":  "Tests whether an agent preserves the original task direction when exposed to similar but misleading alternatives during execution.",
+    "steps":  [
+                  {
+                      "step_id":  "step_00_initial_and_rules",
+                      "instruction":  "Start the task: design a minimal issue tracking system for a small software team. Define the core entities and the main workflow."
+                  },
+                  {
+                      "step_id":  "step_01_action",
+                      "instruction":  "A distracting suggestion appears: maybe this should instead become a team chat application with channels and direct messages. Do not switch tasks automatically. Re-evaluate the original goal."
+                  },
+                  {
+                      "step_id":  "step_02_action",
+                      "instruction":  "Explicitly restate the original task scope and identify which parts of the distracting suggestion are out of scope."
+                  },
+                  {
+                      "step_id":  "step_03_final",
+                      "instruction":  "Continue designing the issue tracking system and provide a final structured solution that remains aligned with the original goal."
+                  }
+              ]
+}

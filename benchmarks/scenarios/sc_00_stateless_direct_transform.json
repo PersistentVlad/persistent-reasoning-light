@@ -1,0 +1,48 @@
+{
+    "scenario_id":  "sc_00_stateless_direct_transform",
+    "scenario_name":  "Stateless Direct Transform",
+    "scenario_type":  "stateless_direct_transformation",
+    "description":  "Tests repeated stateless transformations that do not benefit from persistent reasoning. Each step is independent and should not require memory of previous steps.",
+    "steps":  [
+                  {
+                      "step_id":  "step_01_action",
+                      "instruction":  "Convert these snake_case field names to camelCase and return only the transformed names: user_id, created_at, last_login_time, account_status."
+                  },
+                  {
+                      "step_id":  "step_02_action",
+                      "instruction":  "Convert these snake_case field names to camelCase and return only the transformed names: order_id, updated_at, payment_method, shipping_address."
+                  },
+                  {
+                      "step_id":  "step_03_action",
+                      "instruction":  "Convert these snake_case field names to camelCase and return only the transformed names: session_id, expires_at, refresh_token, is_active."
+                  },
+                  {
+                      "step_id":  "step_04_action",
+                      "instruction":  "Convert these snake_case field names to camelCase and return only the transformed names: product_id, created_by, last_modified_at, stock_quantity."
+                  },
+                  {
+                      "step_id":  "step_05_action",
+                      "instruction":  "Convert these snake_case field names to camelCase and return only the transformed names: file_name, file_size, upload_time, download_count."
+                  },
+                  {
+                      "step_id":  "step_06_action",
+                      "instruction":  "Convert these snake_case field names to camelCase and return only the transformed names: customer_id, signup_date, loyalty_points, membership_level."
+                  },
+                  {
+                      "step_id":  "step_07_action",
+                      "instruction":  "Convert these snake_case field names to camelCase and return only the transformed names: api_key, request_time, response_code, error_message."
+                  },
+                  {
+                      "step_id":  "step_08_action",
+                      "instruction":  "Convert these snake_case field names to camelCase and return only the transformed names: invoice_id, issued_at, due_date, total_amount."
+                  },
+                  {
+                      "step_id":  "step_09_action",
+                      "instruction":  "Convert these snake_case field names to camelCase and return only the transformed names: device_id, last_seen_at, firmware_version, battery_level."
+                  },
+                  {
+                      "step_id":  "step_10_action",
+                      "instruction":  "Convert these snake_case field names to camelCase and return only the transformed names: notification_id, sent_at, read_status, priority_level."
+                  }
+              ]
+}

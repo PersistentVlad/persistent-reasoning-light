@@ -1,0 +1,95 @@
+{
+    "scenario_id":  "sc_10_hanoi_like",
+    "scenario_name":  "Stack Transfer with Constraints",
+    "scenario_type":  "state_constraint_reversible",
+    "description":  "Tests whether an agent can preserve and manipulate a constrained multi-stack state under forward moves, illegal-move pressure, and reverse reconstruction without violating constraints.",
+    "retention_spec":  {
+
+                       },
+    "steps":  [
+                  {
+                      "step_id":  "step_00_initial_and_rules",
+                      "instruction":  "Memorize this exact constrained stack system. STACK_A contains DISC_4 DISC_3 DISC_2 DISC_1 (largest to smallest, bottom to top). STACK_B is EMPTY. STACK_C is EMPTY. Rule: you may move only one disc at a time, and a larger disc may never be placed on a smaller disc."
+                  },
+                  {
+                      "step_id":  "step_01_action",
+                      "instruction":  "Move the smallest valid disc to another stack while preserving constraints."
+                  },
+                  {
+                      "step_id":  "step_02_action",
+                      "instruction":  "Perform the next valid move while preserving constraints."
+                  },
+                  {
+                      "step_id":  "step_03_action",
+                      "instruction":  "Perform the next valid move while preserving constraints."
+                  },
+                  {
+                      "step_id":  "step_04_action",
+                      "instruction":  "Perform the next valid move while preserving constraints."
+                  },
+                  {
+                      "step_id":  "step_05_action",
+                      "instruction":  "Continue performing valid moves while preserving constraints."
+                  },
+                  {
+                      "step_id":  "step_06_action",
+                      "instruction":  "Continue performing valid moves while preserving constraints."
+                  },
+                  {
+                      "step_id":  "step_07_action",
+                      "instruction":  "Continue performing valid moves while preserving constraints."
+                  },
+                  {
+                      "step_id":  "step_08_action",
+                      "instruction":  "Continue performing valid moves while preserving constraints."
+                  },
+                  {
+                      "step_id":  "step_09_action",
+                      "instruction":  "Continue performing valid moves while preserving constraints."
+                  },
+                  {
+                      "step_id":  "step_10_action",
+                      "instruction":  "A suggestion appears: place DISC_4 on top of DISC_1 to speed up progress. This violates the constraints. Do not perform this move. Continue only with valid moves."
+                  },
+                  {
+                      "step_id":  "step_11_action",
+                      "instruction":  "Continue performing valid moves while preserving constraints."
+                  },
+                  {
+                      "step_id":  "step_12_action",
+                      "instruction":  "Continue performing valid moves while preserving constraints."
+                  },
+                  {
+                      "step_id":  "step_13_action",
+                      "instruction":  "Continue performing valid moves while preserving constraints."
+                  },
+                  {
+                      "step_id":  "step_14_action",
+                      "instruction":  "Continue performing valid moves while preserving constraints."
+                  },
+                  {
+                      "step_id":  "step_15_action",
+                      "instruction":  "Begin reversing the sequence of moves to return all discs back to STACK_A."
+                  },
+                  {
+                      "step_id":  "step_16_action",
+                      "instruction":  "Continue reversing the sequence while preserving constraints."
+                  },
+                  {
+                      "step_id":  "step_17_action",
+                      "instruction":  "Continue reversing the sequence while preserving constraints."
+                  },
+                  {
+                      "step_id":  "step_18_action",
+                      "instruction":  "Continue reversing the sequence while preserving constraints."
+                  },
+                  {
+                      "step_id":  "step_19_action",
+                      "instruction":  "Complete the reversal so that all discs return to STACK_A in correct order."
+                  },
+                  {
+                      "step_id":  "step_99_final_report",
+                      "instruction":  "Return your final answer using exactly these headings: CHECKPOINT 0 - INITIAL STATE, CHECKPOINT 5 - FORWARD STATE, CHECKPOINT 10 - FORWARD STATE, CHECKPOINT 15 - RECOVERED STATE, CHECKPOINT 20 - FINAL STATE, FINAL RETAINED UNITS, FINAL LOST UNITS. Under each checkpoint, list exact stack contents in the form STACK_X: values. Final state must be STACK_A: DISC_4 DISC_3 DISC_2 DISC_1, STACK_B: EMPTY, STACK_C: EMPTY. Do not invent any discs or stacks."
+                  }
+              ]
+}

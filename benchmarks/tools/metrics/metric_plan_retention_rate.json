@@ -1,0 +1,8 @@
+{
+  "metric_name": "plan_retention_rate",
+  "metric_type": "reasoning_stability",
+  "metric_description": "How consistently the agent maintains its original plan.",
+  "metric_formula": "plan_steps_retained / total_steps",
+  "metric_direction": "higher_is_better",
+  "metric_range": "0_to_1"
+}

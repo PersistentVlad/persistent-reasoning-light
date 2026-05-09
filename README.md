@@ -113,10 +113,13 @@ Five cards already capture:
 
 ```
 persistent-reasoning-light/
+├── README.md
+├── pyproject.toml
+├── LICENSE
+├── .gitignore
+│
 ├── reasoning-engine/
 │   ├── README.md
-│   ├── pyproject.toml
-│   ├── .gitignore
 │   │
 │   ├── core/
 │   │   ├── __init__.py

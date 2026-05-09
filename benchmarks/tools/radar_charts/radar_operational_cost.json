@@ -1,0 +1,12 @@
+{
+  "radar_name": "operational_cost",
+  "description": "Measures the computational and operational cost of executing the reasoning task.",
+  "use_normalized_scores": true,
+  "metrics": [
+    "execution_time_ms",
+    "time_to_context_ms",
+    "tokens_read_per_query",
+    "files_read_per_query",
+    "steps_to_completion"
+  ]
+}

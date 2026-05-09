@@ -1,0 +1,24 @@
+{
+    "scenario_id":  "sc_18_interrupt_compress_continue",
+    "scenario_name":  "Interrupt РІвЂ вЂ™ Compress РІвЂ вЂ™ Continue",
+    "scenario_type":  "context_interruption_recovery",
+    "description":  "Tests whether an agent can continue a task after an interruption that requires compressing and reusing prior context.",
+    "steps":  [
+                  {
+                      "step_id":  "step_00_initial_and_rules",
+                      "instruction":  "Start solving the task: design a simple system that stores user notes and allows retrieval by keyword. Outline the main components."
+                  },
+                  {
+                      "step_id":  "step_01_action",
+                      "instruction":  "You are interrupted. Summarize your current plan in a compact form so that it can be resumed later."
+                  },
+                  {
+                      "step_id":  "step_02_action",
+                      "instruction":  "Assume the detailed context is no longer available. Continue the task using only your compact summary."
+                  },
+                  {
+                      "step_id":  "step_03_final",
+                      "instruction":  "Continue the design and provide a final structured solution."
+                  }
+              ]
+}

@@ -1,0 +1,115 @@
+{
+  "contract_version": "1.4",
+  "identity": {
+    "scenario_id": "sc_02_n_back_anomaly_trap"
+  },
+  "migration_lock": {
+    "execution_contract": false,
+    "interpretation_support": false,
+    "interpretation_contract": false,
+    "retention_contract": true,
+    "correctness_contract": true,
+    "ghost_contract": true
+  },
+  "execution_contract": {
+    "scenario_mode": "standard",
+    "showcase": false,
+    "status": "stable",
+    "return_to_origin": false
+  },
+  "interpretation_support": {
+    "supports_retention": true,
+    "supports_correctness": false,
+    "supports_ghost": true,
+    "supports_temporal_ghost": true,
+    "trajectory_readiness": "deferred"
+  },
+  "interpretation_contract": {
+    "interpretation_variant": "sequence_retention_deferred",
+    "layer_support": {
+      "retention": "deferred",
+      "correctness": "unsupported",
+      "ghost": "deferred"
+    },
+    "reason": "sequence and ghost metadata are structurally aligned, but engine support for this sequence variant is deferred"
+  },
+  "retention_contract": {
+    "retention_type": "sequence_retention_deferred",
+    "unit_groups": [
+      {
+        "group_id": "sequence",
+        "label": "Sequence",
+        "unit_ids": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I",
+          "J",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "T"
+        ]
+      }
+    ],
+    "checkpoints": [
+      {
+        "checkpoint_id": "checkpoint_00_initial",
+        "checkpoint_label": "Initial",
+        "section_heading": "CHECKPOINT 0 - INITIAL SEQUENCE"
+      },
+      {
+        "checkpoint_id": "checkpoint_01",
+        "checkpoint_label": "Forward 5",
+        "section_heading": "CHECKPOINT 5 - FORWARD"
+      },
+      {
+        "checkpoint_id": "checkpoint_02",
+        "checkpoint_label": "Forward 10",
+        "section_heading": "CHECKPOINT 10 - FORWARD"
+      },
+      {
+        "checkpoint_id": "checkpoint_03",
+        "checkpoint_label": "Reverse 5",
+        "section_heading": "CHECKPOINT 15 - REVERSE"
+      },
+      {
+        "checkpoint_id": "checkpoint_99_final",
+        "checkpoint_label": "Final",
+        "section_heading": "CHECKPOINT 20 - FINAL"
+      }
+    ],
+    "final_sections": {
+      "retained": "FINAL RETAINED ELEMENTS",
+      "lost": "FINAL LOST ELEMENTS"
+    },
+    "required_exact_section_headings": [
+      "CHECKPOINT 0 - INITIAL SEQUENCE",
+      "CHECKPOINT 5 - FORWARD",
+      "CHECKPOINT 10 - FORWARD",
+      "CHECKPOINT 15 - REVERSE",
+      "CHECKPOINT 20 - FINAL",
+      "FINAL RETAINED ELEMENTS",
+      "FINAL LOST ELEMENTS"
+    ]
+  },
+  "correctness_contract": null,
+  "ghost_contract": {
+    "token_pattern": "[A-Z]",
+    "valid_transformations": {}
+  },
+  "trajectory_contract": null,
+  "expected_ready": false,
+  "expected_file": null
+}

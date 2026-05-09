@@ -1,0 +1,237 @@
+{
+    "scenario_id": "sc_99_killer_all_scenarios",
+    "scenario_name": "Killer Scenario - Sectioned Full Stress Stack",
+    "scenario_type": "sectioned_composite_retention",
+    "description": "Tests whether an agent can survive a compounded reasoning stress stack composed of five independent human-verifiable sections: structural retention, math state preservation, temporal N-back stability, ordered trail recovery, and cyclic clock-state return-to-origin.",
+    "composition_spec": {
+        "composition_type": "sectioned_by_reference",
+        "resolution_policy": "explicit_sections_only",
+        "namespace_format": "{section_id}__{source_step_id}",
+        "sections": [
+            {
+                "section_id": "section_1_structural_retention",
+                "section_label": "Structural Retention",
+                "source_scenario_id": "sc_01_structural_retention",
+                "include_steps": [
+                    "step_00_initial_and_rules",
+                    "step_01_action",
+                    "step_02_action",
+                    "step_03_action",
+                    "step_04_action",
+                    "step_05_action",
+                    "step_06_action",
+                    "step_07_action",
+                    "step_08_action",
+                    "step_09_action",
+                    "step_10_action",
+                    "step_11_action",
+                    "step_12_action",
+                    "step_13_action",
+                    "step_14_action",
+                    "step_15_action",
+                    "step_16_action",
+                    "step_17_action",
+                    "step_18_action",
+                    "step_19_action",
+                    "step_99_final_report"
+                ],
+                "max_percent": 20.0,
+                "return_to_origin": false,
+                "contract_imports": {
+                    "retention_type": true,
+                    "unit_groups": true,
+                    "checkpoints": true,
+                    "final_sections": true,
+                    "required_exact_section_headings": true,
+                    "ghost_spec": true,
+                    "correctness_spec": false
+                }
+            },
+            {
+                "section_id": "section_2_math_state_loss",
+                "section_label": "Math State Loss",
+                "source_scenario_id": "sc_03_math_state_loss",
+                "include_steps": [
+                    "step_00_initial_and_rules",
+                    "step_01_action",
+                    "step_02_action",
+                    "step_03_action",
+                    "step_04_action",
+                    "step_05_action",
+                    "step_06_action",
+                    "step_07_action",
+                    "step_08_action",
+                    "step_09_action",
+                    "step_10_action",
+                    "step_11_action",
+                    "step_12_action",
+                    "step_13_action",
+                    "step_14_action",
+                    "step_15_action",
+                    "step_16_action",
+                    "step_17_action",
+                    "step_18_action",
+                    "step_19_action",
+                    "step_99_final_report"
+                ],
+                "max_percent": 20.0,
+                "return_to_origin": true,
+                "contract_imports": {
+                    "retention_type": true,
+                    "unit_groups": true,
+                    "checkpoints": true,
+                    "final_sections": true,
+                    "required_exact_section_headings": true,
+                    "ghost_spec": false,
+                    "correctness_spec": true
+                }
+            },
+            {
+                "section_id": "section_3_n_back_anomaly_trap",
+                "section_label": "N-Back Anomaly Trap",
+                "source_scenario_id": "sc_02_n_back_anomaly_trap",
+                "include_steps": [
+                    "step_00_initial_and_rules",
+                    "step_01_action",
+                    "step_02_action",
+                    "step_03_action",
+                    "step_04_action",
+                    "step_05_action",
+                    "step_06_action",
+                    "step_07_action",
+                    "step_08_action",
+                    "step_09_action",
+                    "step_10_action",
+                    "step_11_action",
+                    "step_12_action",
+                    "step_13_action",
+                    "step_14_action",
+                    "step_15_action",
+                    "step_16_action",
+                    "step_17_action",
+                    "step_18_action",
+                    "step_19_action",
+                    "step_99_final_report"
+                ],
+                "max_percent": 20.0,
+                "return_to_origin": false,
+                "contract_imports": {
+                    "retention_type": true,
+                    "unit_groups": true,
+                    "checkpoints": true,
+                    "final_sections": true,
+                    "required_exact_section_headings": true,
+                    "ghost_spec": true,
+                    "correctness_spec": false
+                }
+            },
+            {
+                "section_id": "section_4_trail_making",
+                "section_label": "Trail Making",
+                "source_scenario_id": "sc_07_trail_making",
+                "include_steps": [
+                    "step_00_initial_and_rules",
+                    "step_01_action",
+                    "step_02_action",
+                    "step_03_action",
+                    "step_04_action",
+                    "step_05_action",
+                    "step_06_action",
+                    "step_07_action",
+                    "step_08_action",
+                    "step_09_action",
+                    "step_10_action",
+                    "step_11_action",
+                    "step_12_action",
+                    "step_13_action",
+                    "step_14_action",
+                    "step_15_action",
+                    "step_16_action",
+                    "step_17_action",
+                    "step_18_action",
+                    "step_99_final_report"
+                ],
+                "max_percent": 20.0,
+                "return_to_origin": false,
+                "contract_imports": {
+                    "retention_type": true,
+                    "unit_groups": true,
+                    "checkpoints": true,
+                    "final_sections": true,
+                    "required_exact_section_headings": true,
+                    "ghost_spec": true,
+                    "correctness_spec": true
+                }
+            },
+            {
+                "section_id": "section_5_move_clock_hands",
+                "section_label": "Move Clock Hands",
+                "source_scenario_id": "sc_08_move_clock_hands",
+                "include_steps": [
+                    "step_00_initial_and_rules",
+                    "step_01_action",
+                    "step_02_action",
+                    "step_03_action",
+                    "step_04_action",
+                    "step_05_action",
+                    "step_99_final_report"
+                ],
+                "max_percent": 20.0,
+                "return_to_origin": true,
+                "contract_imports": {
+                    "retention_type": true,
+                    "unit_groups": true,
+                    "checkpoints": true,
+                    "final_sections": true,
+                    "required_exact_section_headings": true,
+                    "ghost_spec": true,
+                    "correctness_spec": true
+                }
+            }
+        ]
+    },
+    "retention_spec": {
+        "aggregation_policy": "section_level_only",
+        "ghost_spec": {
+            "token_pattern": "(F[0-9]+|D[0-9]+|C[0-9]+|PRODUCT_[0-9]+|COMBINED_SUM|AFTER_[A-Z_]+|FINAL_[A-Z_]+|[A-Z]|[0-9]+-[A-Z]|TIME|HOUR_HAND|MINUTE_HAND|POS_[A-Z0-9_]+)",
+            "valid_transformations": {}
+        },
+        "sections": [
+            {
+                "section_id": "section_1_structural_retention",
+                "section_label": "Structural Retention",
+                "section_heading": "SECTION 1 - STRUCTURAL RETENTION",
+                "max_percent": 20.0,
+                "section_spec_ref": "sc_01_structural_retention"
+            },
+            {
+                "section_id": "section_2_math_state_loss",
+                "section_label": "Math State Loss",
+                "section_heading": "SECTION 2 - MATH STATE LOSS",
+                "max_percent": 20.0,
+                "section_spec_ref": "sc_03_math_state_loss"
+            },
+            {
+                "section_id": "section_3_n_back_anomaly_trap",
+                "section_label": "N-Back Anomaly Trap",
+                "section_heading": "SECTION 3 - N-BACK ANOMALY TRAP",
+                "max_percent": 20.0,
+                "section_spec_ref": "sc_02_n_back_anomaly_trap"
+            },
+            {
+                "section_id": "section_4_trail_making",
+                "section_label": "Trail Making",
+                "section_heading": "SECTION 4 - TRAIL MAKING",
+                "max_percent": 20.0,
+                "section_spec_ref": "sc_07_trail_making"
+            },
+            {
+                "section_id": "section_5_move_clock_hands",
+                "section_label": "Move Clock Hands",
+                "section_heading": "SECTION 5 - MOVE CLOCK HANDS",
+                "max_percent": 20.0,
+                "section_spec_ref": "sc_08_move_clock_hands"
+            }
+        ]
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "scenario_id":  "sc_15_math_reasoning",
+    "scenario_name":  "Multi-Step Math Reasoning Consistency",
+    "scenario_type":  "mathematical_reasoning_integrity",
+    "description":  "Tests whether an agent can preserve exact mathematical state and exact canonical values across a multi-step reasoning task using strict named slots and exact output headings.",
+    "retention_spec":  {
+
+                       },
+    "steps":  [
+                  {
+                      "step_id":  "step_01_action",
+                      "instruction":  "Start solving the problem: evaluate ((18 + 27) * 6) - (14 * 9). Track the exact intermediate values."
+                  },
+                  {
+                      "step_id":  "step_02_action",
+                      "instruction":  "Take the exact previous result, divide it by 3, then add 25. Keep all intermediate values explicit."
+                  },
+                  {
+                      "step_id":  "step_03_action",
+                      "instruction":  "Pause and verify whether each intermediate arithmetic step is still consistent. Reconstruct the exact named chain before continuing."
+                  },
+                  {
+                      "step_id":  "step_04_action",
+                      "instruction":  "Now multiply the verified result by 4 and subtract 17. Continue using the verified chain only."
+                  },
+                  {
+                      "step_id":  "step_05_final",
+                      "instruction":  "Return your final answer using exactly these plain-text headings and no variations: CHECKPOINT 1 - VERIFIED CHAIN, FINAL RETAINED UNITS, FINAL LOST UNITS. Under CHECKPOINT 1 - VERIFIED CHAIN, list exact slot lines only in the form SLOT_NAME: VALUE for SUM_18_27, LEFT_PRODUCT, RIGHT_PRODUCT, INITIAL_DIFFERENCE, AFTER_DIVISION, AFTER_ADDITION, FINAL_RESULT. Use the exact canonical integer form for FINAL_RESULT. Under FINAL RETAINED UNITS, list retained slot names. Under FINAL LOST UNITS, list lost slot names or write NONE."
+                  }
+              ]
+}

@@ -1,0 +1,8 @@
+{
+  "metric_name": "context_loss_events",
+  "metric_type": "reasoning_stability",
+  "metric_description": "Number of times the agent loses relevant context during reasoning.",
+  "metric_formula": "count(context_loss_events)",
+  "metric_direction": "lower_is_better",
+  "metric_range": "count"
+}

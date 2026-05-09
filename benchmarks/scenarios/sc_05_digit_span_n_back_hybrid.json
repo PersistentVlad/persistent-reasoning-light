@@ -1,0 +1,95 @@
+{
+    "scenario_id":  "sc_05_digit_span_n_back_hybrid",
+    "scenario_name":  "Digit Span + N-Back Hybrid",
+    "scenario_type":  "memory_transform_temporal",
+    "description":  "Tests working memory under transformation pressure using a digit span combined with N-back queries and recovery requirements.",
+    "retention_spec":  {
+
+                       },
+    "steps":  [
+                  {
+                      "step_id":  "step_00_initial_and_rules",
+                      "instruction":  "Memorize this exact digit sequence: 3 7 2 9 4 6 8 1 5 0."
+                  },
+                  {
+                      "step_id":  "step_01_action",
+                      "instruction":  "Multiply every second digit by 2. Keep the sequence order."
+                  },
+                  {
+                      "step_id":  "step_02_action",
+                      "instruction":  "Add 1 to every third digit. Keep the sequence order."
+                  },
+                  {
+                      "step_id":  "step_03_action",
+                      "instruction":  "Reverse the entire sequence."
+                  },
+                  {
+                      "step_id":  "step_04_action",
+                      "instruction":  "Rotate the sequence by moving the first 3 elements to the end."
+                  },
+                  {
+                      "step_id":  "step_05_action",
+                      "instruction":  "For each position starting from index 4, identify the digit 3 steps back (3-back rule)."
+                  },
+                  {
+                      "step_id":  "step_06_action",
+                      "instruction":  "Continue applying the 3-back reasoning."
+                  },
+                  {
+                      "step_id":  "step_07_action",
+                      "instruction":  "Continue applying the 3-back reasoning."
+                  },
+                  {
+                      "step_id":  "step_08_action",
+                      "instruction":  "Continue applying the 3-back reasoning."
+                  },
+                  {
+                      "step_id":  "step_09_action",
+                      "instruction":  "Complete the N-back reasoning phase."
+                  },
+                  {
+                      "step_id":  "step_10_action",
+                      "instruction":  "Assume the transformed sequence is now lost. Only a vague note remains: \u0027digit transformations and ordering changes were applied earlier\u0027."
+                  },
+                  {
+                      "step_id":  "step_11_action",
+                      "instruction":  "Begin reconstructing the original digit sequence."
+                  },
+                  {
+                      "step_id":  "step_12_action",
+                      "instruction":  "Continue reconstructing the original sequence."
+                  },
+                  {
+                      "step_id":  "step_13_action",
+                      "instruction":  "Continue reconstructing the original sequence."
+                  },
+                  {
+                      "step_id":  "step_14_action",
+                      "instruction":  "Continue reconstructing the original sequence."
+                  },
+                  {
+                      "step_id":  "step_15_action",
+                      "instruction":  "Continue reconstructing the original sequence."
+                  },
+                  {
+                      "step_id":  "step_16_action",
+                      "instruction":  "Continue reconstructing the original sequence."
+                  },
+                  {
+                      "step_id":  "step_17_action",
+                      "instruction":  "Continue reconstructing the original sequence."
+                  },
+                  {
+                      "step_id":  "step_18_action",
+                      "instruction":  "Continue reconstructing the original sequence."
+                  },
+                  {
+                      "step_id":  "step_19_action",
+                      "instruction":  "Complete reconstruction of the original sequence."
+                  },
+                  {
+                      "step_id":  "step_99_final_report",
+                      "instruction":  "Return your final answer using exactly these headings: CHECKPOINT 0 - INITIAL SEQUENCE, CHECKPOINT 5 - TRANSFORMED, CHECKPOINT 10 - NBACK, CHECKPOINT 15 - RECOVERED, CHECKPOINT 20 - FINAL, FINAL RETAINED DIGITS, FINAL LOST DIGITS. Under each section list digits as plain text. The final sequence must match the original exactly."
+                  }
+              ]
+}

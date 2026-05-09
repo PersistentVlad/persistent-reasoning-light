@@ -1,0 +1,8 @@
+{
+  "metric_name": "token_efficiency",
+  "metric_type": "memory_efficiency",
+  "metric_description": "Efficiency of token usage relative to useful reasoning output.",
+  "metric_formula": "useful_tokens / total_tokens",
+  "metric_direction": "higher_is_better",
+  "metric_range": "0_to_1"
+}

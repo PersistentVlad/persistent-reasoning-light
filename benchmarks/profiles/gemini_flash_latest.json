@@ -1,0 +1,43 @@
+{
+  "name": "gemini_flash_latest",
+  "backend": "gemini",
+  "model": "gemini-flash-latest",
+  "working_context_format": "relevant_summaries",
+  "artifact_generator_mode": "constrained",
+  "artifact_filter_mode": "soft",
+  "brain_mode": "accumulative",
+  "brain_in": {
+    "type": "runtime",
+    "ref": null
+  },
+  "brain_out": {
+    "mode": "snapshot",
+    "ref": null
+  },
+  "diagnostic_modes": {
+    "pr_ephemeral": false,
+    "post_run_artifact_harvest": true
+  },
+  "scenario_subset": [
+    "sc_00_stateless_direct_transform",
+    "sc_01_structural_retention",
+    "sc_02_n_back_anomaly_trap",
+    "sc_03_math_state_loss",
+    "sc_04_chain_collapse",
+    "sc_05_digit_span_n_back_hybrid",
+    "sc_06_plan_reset",
+    "sc_07_trail_making",
+    "sc_08_move_clock_hands"
+  ],
+  "showcase": "sc_99_killer_all_scenarios",
+  "mode_to_key_mapping": "strict",
+  "execution": {
+    "timeout_seconds": 299,
+    "inter_scenario_delay_seconds": 30
+  },
+  "quota_policy": {
+    "on_429_first": "wait_30s_retry_once",
+    "on_429_second": "stop_run"
+  },
+  "purpose": "debug_validation"
+}

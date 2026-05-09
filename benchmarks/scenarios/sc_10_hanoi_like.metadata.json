@@ -1,0 +1,115 @@
+{
+  "contract_version": "1.4",
+  "identity": {
+    "scenario_id": "sc_10_hanoi_like"
+  },
+  "migration_lock": {
+    "execution_contract": false,
+    "interpretation_support": false,
+    "interpretation_contract": false,
+    "retention_contract": true,
+    "correctness_contract": true,
+    "ghost_contract": true
+  },
+  "execution_contract": {
+    "scenario_mode": "standard",
+    "showcase": false,
+    "status": "stable",
+    "return_to_origin": true
+  },
+  "interpretation_support": {
+    "supports_retention": true,
+    "supports_correctness": true,
+    "supports_ghost": true,
+    "supports_temporal_ghost": true,
+    "trajectory_readiness": "deferred"
+  },
+  "interpretation_contract": {
+    "interpretation_variant": "none",
+    "layer_support": {
+      "retention": "unsupported",
+      "correctness": "unsupported",
+      "ghost": "unsupported"
+    }
+  },
+  "retention_contract": {
+    "retention_type": "state_retention_with_constraints",
+    "unit_groups": [
+      {
+        "group_id": "discs",
+        "label": "Discs",
+        "unit_ids": [
+          "DISC_1",
+          "DISC_2",
+          "DISC_3",
+          "DISC_4"
+        ]
+      },
+      {
+        "group_id": "stacks",
+        "label": "Stacks",
+        "unit_ids": [
+          "STACK_A",
+          "STACK_B",
+          "STACK_C"
+        ]
+      }
+    ],
+    "checkpoints": [
+      {
+        "checkpoint_id": "checkpoint_00_initial",
+        "checkpoint_label": "Initial State",
+        "section_heading": "CHECKPOINT 0 - INITIAL STATE"
+      },
+      {
+        "checkpoint_id": "checkpoint_01",
+        "checkpoint_label": "Forward State",
+        "section_heading": "CHECKPOINT 5 - FORWARD STATE"
+      },
+      {
+        "checkpoint_id": "checkpoint_02",
+        "checkpoint_label": "Forward State 10",
+        "section_heading": "CHECKPOINT 10 - FORWARD STATE"
+      },
+      {
+        "checkpoint_id": "checkpoint_03",
+        "checkpoint_label": "Recovered State",
+        "section_heading": "CHECKPOINT 15 - RECOVERED STATE"
+      },
+      {
+        "checkpoint_id": "checkpoint_99_final",
+        "checkpoint_label": "Final State",
+        "section_heading": "CHECKPOINT 20 - FINAL STATE"
+      }
+    ],
+    "final_sections": {
+      "retained": "FINAL RETAINED UNITS",
+      "lost": "FINAL LOST UNITS"
+    },
+    "required_exact_section_headings": [
+      "CHECKPOINT 0 - INITIAL STATE",
+      "CHECKPOINT 5 - FORWARD STATE",
+      "CHECKPOINT 10 - FORWARD STATE",
+      "CHECKPOINT 15 - RECOVERED STATE",
+      "CHECKPOINT 20 - FINAL STATE",
+      "FINAL RETAINED UNITS",
+      "FINAL LOST UNITS"
+    ]
+  },
+  "correctness_contract": {
+    "slot_section_heading": "CHECKPOINT 20 - FINAL STATE",
+    "value_match_policy": "exact_string",
+    "expected_slot_values": {
+      "STACK_A": "DISC_4 DISC_3 DISC_2 DISC_1",
+      "STACK_B": "EMPTY",
+      "STACK_C": "EMPTY"
+    }
+  },
+  "ghost_contract": {
+    "token_pattern": "(DISC_[0-9]+|STACK_[A-C])",
+    "valid_transformations": {}
+  },
+  "trajectory_contract": null,
+  "expected_ready": false,
+  "expected_file": null
+}

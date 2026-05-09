@@ -1,0 +1,110 @@
+{
+  "contract_version": "1.4",
+  "identity": {
+    "scenario_id": "sc_04_chain_collapse"
+  },
+  "migration_lock": {
+    "execution_contract": false,
+    "interpretation_support": false,
+    "interpretation_contract": false,
+    "retention_contract": true,
+    "correctness_contract": true,
+    "ghost_contract": true
+  },
+  "execution_contract": {
+    "scenario_mode": "standard",
+    "showcase": false,
+    "status": "stable",
+    "return_to_origin": false
+  },
+  "interpretation_support": {
+    "supports_retention": true,
+    "supports_correctness": false,
+    "supports_ghost": true,
+    "supports_temporal_ghost": true,
+    "trajectory_readiness": "deferred"
+  },
+  "interpretation_contract": {
+    "interpretation_variant": "structural_retention_deferred",
+    "layer_support": {
+      "retention": "deferred",
+      "correctness": "unsupported",
+      "ghost": "deferred"
+    },
+    "reason": "chain-retention metadata is aligned, but scenario-specific interpretation support remains deferred"
+  },
+  "retention_contract": {
+    "retention_type": "structural_retention_deferred",
+    "unit_groups": [
+      {
+        "group_id": "chain_steps",
+        "label": "Chain Steps",
+        "unit_ids": [
+          "S1",
+          "S2",
+          "S3",
+          "S4",
+          "S5",
+          "S6",
+          "S7",
+          "S8",
+          "S9",
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14",
+          "S15"
+        ]
+      }
+    ],
+    "checkpoints": [
+      {
+        "checkpoint_id": "checkpoint_00_initial",
+        "checkpoint_label": "Initial",
+        "section_heading": "CHECKPOINT 0 - INITIAL CHAIN"
+      },
+      {
+        "checkpoint_id": "checkpoint_01",
+        "checkpoint_label": "Expanded",
+        "section_heading": "CHECKPOINT 5 - EXPANDED"
+      },
+      {
+        "checkpoint_id": "checkpoint_02",
+        "checkpoint_label": "Compressed",
+        "section_heading": "CHECKPOINT 10 - COMPRESSED"
+      },
+      {
+        "checkpoint_id": "checkpoint_03",
+        "checkpoint_label": "Recovered",
+        "section_heading": "CHECKPOINT 15 - RECOVERED"
+      },
+      {
+        "checkpoint_id": "checkpoint_99_final",
+        "checkpoint_label": "Final",
+        "section_heading": "CHECKPOINT 20 - FINAL"
+      }
+    ],
+    "final_sections": {
+      "retained": "FINAL RETAINED STEPS",
+      "lost": "FINAL LOST STEPS"
+    },
+    "required_exact_section_headings": [
+      "CHECKPOINT 0 - INITIAL CHAIN",
+      "CHECKPOINT 5 - EXPANDED",
+      "CHECKPOINT 10 - COMPRESSED",
+      "CHECKPOINT 15 - RECOVERED",
+      "CHECKPOINT 20 - FINAL",
+      "FINAL RETAINED STEPS",
+      "FINAL LOST STEPS"
+    ]
+  },
+  "correctness_contract": null,
+  "ghost_contract": {
+    "token_pattern": "S[0-9]+",
+    "valid_transformations": {}
+  },
+  "trajectory_contract": null,
+  "expected_ready": false,
+  "expected_file": null
+}

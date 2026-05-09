@@ -1,0 +1,8 @@
+{
+  "metric_name": "rediscovery_rate",
+  "metric_type": "knowledge_persistence",
+  "metric_description": "Rate at which the agent re-derives already known information instead of reusing it.",
+  "metric_formula": "rediscovery_events / reasoning_steps",
+  "metric_direction": "lower_is_better",
+  "metric_range": "0_to_1"
+}

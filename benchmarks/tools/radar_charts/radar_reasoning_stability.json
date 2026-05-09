@@ -1,0 +1,12 @@
+{
+  "radar_name": "reasoning_stability",
+  "description": "Measures how stable and consistent the reasoning process remains throughout execution.",
+  "use_normalized_scores": true,
+  "metrics": [
+    "replanning_events",
+    "context_loss_events",
+    "plan_retention_rate",
+    "knowledge_retention_rate",
+    "controlled_mutations_ratio"
+  ]
+}

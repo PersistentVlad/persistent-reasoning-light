@@ -1,0 +1,91 @@
+{
+    "scenario_id":  "sc_06_plan_reset",
+    "scenario_name":  "Plan Reset and Re-Alignment",
+    "scenario_type":  "plan_recovery_and_realignment",
+    "description":  "Tests whether an agent can explicitly invalidate an obsolete plan, avoid leaking incompatible steps, and rebuild a new aligned plan under reset pressure using exact plan units.",
+    "retention_spec":  {
+
+                       },
+    "steps":  [
+                  {
+                      "step_id":  "step_00_initial_and_rules",
+                      "instruction":  "Memorize this exact initial plan for a centralized task management API. P1 = define REST endpoints, P2 = define request/response schemas, P3 = add centralized authentication, P4 = add server-side rate limiting, P5 = add server-side pagination, P6 = add central database persistence."
+                  },
+                  {
+                      "step_id":  "step_01_action",
+                      "instruction":  "Extend the initial plan while preserving every exact old-plan unit id P1-P6."
+                  },
+                  {
+                      "step_id":  "step_02_action",
+                      "instruction":  "Regroup the same old-plan units into phases while preserving every exact unit id P1-P6."
+                  },
+                  {
+                      "step_id":  "step_03_action",
+                      "instruction":  "Rewrite the old plan into a compact ordered structure while preserving every exact unit id P1-P6."
+                  },
+                  {
+                      "step_id":  "step_04_action",
+                      "instruction":  "Continue carrying the old plan forward without losing any exact old-plan unit ids."
+                  },
+                  {
+                      "step_id":  "step_05_action",
+                      "instruction":  "New requirement: the system must be offline-first and sync across devices without a central server. The old centralized plan is now invalid."
+                  },
+                  {
+                      "step_id":  "step_06_action",
+                      "instruction":  "Explicitly acknowledge that old-plan units P1-P6 are no longer valid as the final solution."
+                  },
+                  {
+                      "step_id":  "step_07_action",
+                      "instruction":  "Begin the new valid plan using exact new-plan units only: N1 = local-first data model, N2 = peer/device sync protocol, N3 = conflict resolution strategy, N4 = offline authentication approach, N5 = local pagination/query strategy, N6 = device-level persistence model."
+                  },
+                  {
+                      "step_id":  "step_08_action",
+                      "instruction":  "Continue the new plan while preserving every exact new-plan unit id N1-N6."
+                  },
+                  {
+                      "step_id":  "step_09_action",
+                      "instruction":  "Produce the full invalidation boundary: old plan invalid, new plan active."
+                  },
+                  {
+                      "step_id":  "step_10_action",
+                      "instruction":  "Rebuild the plan around the new requirement only. Do not leak obsolete old-plan units into the active plan."
+                  },
+                  {
+                      "step_id":  "step_11_action",
+                      "instruction":  "Continue rebuilding the new plan around N1-N6 only."
+                  },
+                  {
+                      "step_id":  "step_12_action",
+                      "instruction":  "Continue rebuilding the new plan around N1-N6 only."
+                  },
+                  {
+                      "step_id":  "step_13_action",
+                      "instruction":  "Continue rebuilding the new plan and preserve exact new-plan unit ids."
+                  },
+                  {
+                      "step_id":  "step_14_action",
+                      "instruction":  "Complete the reset and ensure the new plan is internally consistent."
+                  },
+                  {
+                      "step_id":  "step_15_action",
+                      "instruction":  "Check that no obsolete old-plan units remain in the final active plan."
+                  },
+                  {
+                      "step_id":  "step_16_action",
+                      "instruction":  "Check that all new-plan units N1-N6 remain present."
+                  },
+                  {
+                      "step_id":  "step_17_action",
+                      "instruction":  "Check that the final plan is aligned only with the updated offline-first requirement."
+                  },
+                  {
+                      "step_id":  "step_18_action",
+                      "instruction":  "Prepare the final exact plan state for reporting."
+                  },
+                  {
+                      "step_id":  "step_99_final_report",
+                      "instruction":  "Return your final answer using exactly these headings: CHECKPOINT 0 - INITIAL PLAN, CHECKPOINT 5 - EXTENDED PLAN, CHECKPOINT 10 - INVALIDATED PLAN, CHECKPOINT 15 - RESET PLAN, CHECKPOINT 20 - FINAL PLAN, FINAL RETAINED UNITS, FINAL LOST UNITS. List unit ids as plain text only. Do not invent unit ids beyond P1-P6 and N1-N6. In the final active plan, obsolete old-plan units must not remain as active solution units."
+                  }
+              ]
+}

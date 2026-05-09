@@ -1,0 +1,8 @@
+{
+  "metric_name": "structural_integrity_score",
+  "metric_type": "persistence_integrity",
+  "metric_description": "Fraction of reasoning states that remain valid and structurally consistent.",
+  "metric_formula": "valid_reasoning_states / total_reasoning_states",
+  "metric_direction": "higher_is_better",
+  "metric_range": "0_to_1"
+}

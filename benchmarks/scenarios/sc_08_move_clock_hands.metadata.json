@@ -1,0 +1,111 @@
+{
+  "contract_version": "1.4",
+  "identity": {
+    "scenario_id": "sc_08_move_clock_hands"
+  },
+  "migration_lock": {
+    "execution_contract": false,
+    "interpretation_support": false,
+    "interpretation_contract": false,
+    "retention_contract": true,
+    "correctness_contract": true,
+    "ghost_contract": true
+  },
+  "execution_contract": {
+    "scenario_mode": "standard",
+    "showcase": false,
+    "status": "stable",
+    "return_to_origin": true
+  },
+  "interpretation_support": {
+    "supports_retention": true,
+    "supports_correctness": true,
+    "supports_ghost": true,
+    "supports_temporal_ghost": true,
+    "trajectory_readiness": "deferred"
+  },
+  "interpretation_contract": {
+    "interpretation_variant": "structural_retention_with_correctness_deferred",
+    "layer_support": {
+      "retention": "deferred",
+      "correctness": "deferred",
+      "ghost": "deferred"
+    },
+    "reason": "clock-state retention, correctness, and ghost metadata are explicit, but scenario-specific interpretation support remains deferred"
+  },
+  "retention_contract": {
+    "retention_type": "structural_retention_with_correctness_deferred",
+    "unit_groups": [
+      {
+        "group_id": "clock_state",
+        "label": "Clock State",
+        "unit_ids": [
+          "TIME",
+          "HOUR_HAND",
+          "MINUTE_HAND",
+          "MINUTES_TO_POS_A",
+          "POS_A",
+          "POS_B"
+        ]
+      }
+    ],
+    "checkpoints": [
+      {
+        "checkpoint_id": "checkpoint_00_initial",
+        "checkpoint_label": "Initial Clock",
+        "section_heading": "CHECKPOINT 0 - INITIAL CLOCK"
+      },
+      {
+        "checkpoint_id": "checkpoint_01",
+        "checkpoint_label": "After First Moving",
+        "section_heading": "CHECKPOINT 10 - AFTER FIRST MOVING"
+      },
+      {
+        "checkpoint_id": "checkpoint_02",
+        "checkpoint_label": "After Second Moving",
+        "section_heading": "CHECKPOINT 12 - AFTER SECOND MOVING"
+      },
+      {
+        "checkpoint_id": "checkpoint_03",
+        "checkpoint_label": "After Third Moving",
+        "section_heading": "CHECKPOINT 15 - AFTER THIRD MOVING"
+      },
+      {
+        "checkpoint_id": "checkpoint_04",
+        "checkpoint_label": "After Fourth Moving",
+        "section_heading": "CHECKPOINT 20 - AFTER FOURTH MOVING"
+      },
+      {
+        "checkpoint_id": "checkpoint_99_final",
+        "checkpoint_label": "Final Clock",
+        "section_heading": "CHECKPOINT 21 - FINAL CLOCK"
+      }
+    ],
+    "final_sections": {
+      "retained": "FINAL RETAINED CLOCK UNITS",
+      "lost": "FINAL LOST CLOCK UNITS"
+    },
+    "required_exact_section_headings": [
+      "CHECKPOINT 0 - INITIAL CLOCK",
+      "CHECKPOINT 10 - AFTER FIRST MOVING",
+      "CHECKPOINT 12 - AFTER SECOND MOVING",
+      "CHECKPOINT 15 - AFTER THIRD MOVING",
+      "CHECKPOINT 20 - AFTER FOURTH MOVING",
+      "CHECKPOINT 21 - FINAL CLOCK",
+      "FINAL RETAINED CLOCK UNITS",
+      "FINAL LOST CLOCK UNITS"
+    ]
+  },
+  "correctness_contract": {
+    "slot_section_heading": "CHECKPOINT 21 - FINAL CLOCK",
+    "value_match_policy": "exact_string",
+    "expected_ref": "final.expected_slot_values"
+  },
+  "ghost_contract": {
+    "token_pattern": "(TIME|HOUR_HAND|MINUTE_HAND|MINUTES_TO_POS_A|POS_[A-Z0-9_]+)",
+    "valid_transformations": {}
+  },
+  "trajectory_contract": null,
+  "expected_ready": true,
+  "expected_file": "sc_08_move_clock_hands.expected.json"
+}

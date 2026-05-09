@@ -1,0 +1,35 @@
+{
+    "scenario_id":  "sc_09_zero_crossing_event_trap",
+    "scenario_name":  "Zero Crossing Event Trap",
+    "scenario_type":  "event_driven_state_update",
+    "description":  "Tests whether an agent can correctly track position updates under event-triggered rules that depend on zero-crossing and modifier sign inversion.",
+    "retention_spec":  {
+
+                       },
+    "steps":  [
+                  {
+                      "step_id":  "step_00_initial_and_rules",
+                      "instruction":  "Rule: Each step action is performed discretely. After each POSITION change, check the trigger condition. Being at 0 is not trigger event. Crossing 0 is a trigger event. Each time the POSITION crosses 0 with sign change immediately add +0.3 to POSITION. After each trigger set MULTIPLIER to opposite sign (MULTIPLIER = - MULTIPLIER). Start at POSITION = 0. One STEP = 1 * MULTIPLIER. Initial MULTIPLIER = 0.1."
+                  },
+                  {
+                      "step_id":  "step_01_action",
+                      "instruction":  "Move 10 steps."
+                  },
+                  {
+                      "step_id":  "step_02_action",
+                      "instruction":  "Move -11 steps."
+                  },
+                  {
+                      "step_id":  "step_03_action",
+                      "instruction":  "Move -7 steps."
+                  },
+                  {
+                      "step_id":  "step_04_action",
+                      "instruction":  "Move -4 steps."
+                  },
+                  {
+                      "step_id":  "step_99_final_report",
+                      "instruction":  "Return your final answer using exactly these headings: CHECKPOINT 0 - INITIAL STATE, CHECKPOINT 1 - AFTER FORWARD, CHECKPOINT 2 - AFTER BACKWARD, CHECKPOINT 3 - AFTER FORWARD 2, CHECKPOINT 4 - AFTER BACKWARD 2, CHECKPOINT 5 - FINAL STATE, FINAL RETAINED VARIABLES, FINAL LOST VARIABLES. Under each checkpoint, use exact lines in the form NAME: VALUE for POSITION and MULTIPLIER. Under CHECKPOINT 5 - FINAL STATE also include FINAL_POSITION: VALUE. Under FINAL LOST VARIABLES, list lost variable names or write NONE."
+                  }
+              ]
+}

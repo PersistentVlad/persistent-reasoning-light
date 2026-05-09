@@ -1,0 +1,37 @@
+{
+    "scenario_id": "sc_08_move_clock_hands",
+    "scenario_name": "Move Clock Hands",
+    "scenario_type": "cyclic_spatial_state_retention",
+    "description": "Tests whether an agent can preserve a cyclic clock state under forward movement, partial reverse, asymmetric oscillation, sign-switch behavior at B, reverse-trigger minute shifts, and exact return-to-origin correction.",
+    "retention_spec": {},
+    "steps": [
+        {
+            "step_id": "step_00_initial_and_rules",
+            "instruction": "Initial state: POS_A = 12:00. POS_B = 22:00. One step = 60 minutes. Rules: POS_B is a trigger point during movement. When the current movement direction is forward and the current time position reaches or passes POS_B, immediately move the minute hand by +15 minutes. When the current movement direction is backward and the current time position reaches or passes POS_B, immediately move the minute hand by -15 minutes. After applying the minute shift, continue the remaining movement. | Reverse is an instant event that occurs before movement begins. At each reverse event, apply a minute shift based on the current direction. When the current direction is forward, move the minute hand by +15 minutes. When the current direction is backward, move the minute hand by -15 minutes. Then switch direction and continue movement. | On each step, calculate MINUTES_TO_POS_A as the clockwise distance in minutes from POS_A to the current time position. | Keep the clock state exact at all times."
+        },
+        {
+            "step_id": "step_01_action",
+            "instruction": "Starting from POS_A move 10 steps."
+        },
+        {
+            "step_id": "step_02_action",
+            "instruction": "Then do a reverse and move -2 steps."
+        },
+        {
+            "step_id": "step_03_action",
+            "instruction": "Then do a reverse and move 3 steps."
+        },
+        {
+            "step_id": "step_04_action",
+            "instruction": "Then do a reverse and move -5 steps."
+        },
+        {
+            "step_id": "step_05_action",
+            "instruction": "Then adding -375min constant number of minutes."
+        },
+        {
+            "step_id": "step_99_final_report",
+            "instruction": "Return your final answer using exactly these headings: CHECKPOINT 0 - INITIAL CLOCK, CHECKPOINT 10 - AFTER FIRST MOVING, CHECKPOINT 12 - AFTER SECOND MOVING, CHECKPOINT 15 - AFTER THIRD MOVING, CHECKPOINT 20 - AFTER FOURTH MOVING, CHECKPOINT 21 - FINAL CLOCK, FINAL RETAINED CLOCK UNITS, FINAL LOST CLOCK UNITS. Under each checkpoint, use exact lines in the form NAME: VALUE. Required names are TIME, HOUR_HAND, MINUTE_HAND, MINUTES_TO_POS_A, POS_A, POS_B. Under CHECKPOINT 21 - FINAL CLOCK, include the exact final clock state. Under FINAL LOST CLOCK UNITS, list lost unit names or write NONE. Do not introduce extra state names."
+        }
+    ]
+}

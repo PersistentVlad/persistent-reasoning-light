@@ -1,0 +1,31 @@
+{
+    "scenario_id":  "sc_11_temporal_rule_propagation",
+    "scenario_name":  "Temporal Rule Propagation",
+    "scenario_type":  "time_bounded_dependency_propagation",
+    "description":  "Tests whether an agent can preserve and propagate a small time-bounded dependency state under overlapping temporal rules, exact updates, and final exact-state evaluation.",
+    "retention_spec":  {
+
+                       },
+    "steps":  [
+                  {
+                      "step_id":  "step_00_initial_and_rules",
+                      "instruction":  "Use these exact rules. 1. A always equals B before 4 step. 2. C always equals D before 2 step. 3. B always equals C after 1 step. Initial: A=0, B=0, C=0, D=0."
+                  },
+                  {
+                      "step_id":  "step_01_action",
+                      "instruction":  "Step 1 update: D = C + 1"
+                  },
+                  {
+                      "step_id":  "step_02_action",
+                      "instruction":  "Step 2 update: C = 2"
+                  },
+                  {
+                      "step_id":  "step_03_action",
+                      "instruction":  "Step 3 update: D = 3"
+                  },
+                  {
+                      "step_id":  "step_99_final_report",
+                      "instruction":  "Return your final answer using exactly these headings: CHECKPOINT 0 - INITIAL STATE, CHECKPOINT 2 - AFTER STEP 1, CHECKPOINT 3 - AFTER STEP 2, CHECKPOINT 4 - AFTER STEP 3, CHECKPOINT 5 - FINAL STATE, FINAL RETAINED VARIABLES, FINAL LOST VARIABLES. Under each checkpoint, use exact lines in the form NAME: VALUE for A, B, C, D. Under CHECKPOINT 5 - FINAL STATE also include FINAL_A: VALUE. Under FINAL LOST VARIABLES, list lost variable names or write NONE. Do not introduce any variable names beyond A, B, C, D, FINAL_A."
+                  }
+              ]
+}
